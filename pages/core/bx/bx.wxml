@@ -1,0 +1,56 @@
+<!--bx.wxml-->
+<view class="container">
+    <view class="service-declare">
+        <navigator url="bx_apply">
+            <view class="service-declare-item">
+                <text class="service-declare-name">服务申报</text>
+                <view class="service-declare-more">
+                    <image class="service-declare-open" src="/images/core/bx/more.png" />
+                </view>
+            </view>
+        </navigator> 
+    </view> 
+
+    <block wx:for-items="{{list}}">
+        <view class="process review-process">
+            <view class="process-hd">
+                <image class="review-process-icon" src="/images/core/bx/review-icon.png" />
+                <text class="order-number-name">{{item.wx_djh}}</text>
+                <view class="process-state">
+                    <text class="process-state-name">{{item.wx_wxztm}}</text>
+                </view>
+            </view>
+            <view class="process-bd">
+                <view class="process-item service-type">
+                    <view class="service-type-bd process-item-bd">
+                        <text class="service-type-name">服务类型</text>
+                    </view>
+                    <view class="service-type-ft process-item-ft">
+                        <text class="service-type-info">{{item.wx_bxlxm}}</text>
+                    </view>
+                </view>
+                <view class="process-item service-project">
+                    <view class="service-project-bd process-item-bd">
+                        <text class="service-project-name">服务项目</text>
+                    </view>
+                    <view class="service-project-ft process-item-ft">
+                        <text class="service-project-info">{{item.wx_bt}}</text>
+                    </view>
+                </view>
+                <view class="process-item service-time">
+                    <view class="service-time-bd process-item-bd">
+                        <text class="service-time-name">申请时间</text>
+                    </view>
+                    <view class="service-time-ft process-item-ft">
+                        <text class="service-time-info">{{item.wx_bxsj}}</text>
+                    </view>
+                </view>
+            </view> 
+            <navigator url="bx_detail">
+                <view class="service-detail-open">
+                    <text>详情</text>
+                </view>
+            </navigator>
+        </view>
+    </block>
+</view>

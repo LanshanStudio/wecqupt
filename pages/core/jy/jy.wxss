@@ -1,0 +1,51 @@
+/**jy.wxss**/
+.container {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    background-color: #f7f7f7;
+}
+.current-type {
+    font-size: 11pt;
+    line-height: 200%;
+    padding: 25rpx 0 15rpx;
+}
+.book-wraper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 20rpx 0;
+    margin-bottom: 20rpx;
+    background: #fff;
+    border-radius: 3px;
+}
+.book-name {  
+    font-size: 15pt;
+    line-height: 135%;
+    text-align: center;
+}
+.book-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10rpx 20rpx;
+}
+.book-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20rpx;
+    font-size: 11pt;
+}
+.book-date text {
+    line-height: 150%;
+}
+
+.book-img {
+    margin-right: -20rpx;
+    height: 200rpx;
+    width: 200rpx;
+    opacity: 0.25;
+}

@@ -1,0 +1,90 @@
+/**cj.wxss**/
+.container{
+    background: rgb(247, 247, 247);
+    /*padding-top: 75rpx;*/
+}
+
+.cj-info-ctn{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 32rpx 0 60rpx 0;
+    background: #fff;
+    
+}
+.cj-grade{
+    width: 680rpx;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 25rpx;
+    padding-bottom: 32rpx; 
+    box-sizing: border-box;
+    border-bottom: 1px #eee solid;
+}
+.cj-grade-logo{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 40rpx;
+    text-align: center;
+    line-height: 90rpx;
+    color: #fff;
+    font-size: large;
+    overflow: hidden;
+}
+.cj-grade-logo image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.grade-thd{
+    background: rgb(164,199,235);
+}
+
+
+.cj-grade-term{
+    padding-left: 45rpx; 
+    color: #666;
+    font-size: 30rpx;
+    line-height: 40rpx;
+}
+.cj-grade-fst{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    height: 100rpx;
+}
+
+.grade-comment{
+    color: #999;
+    font-size: 26rpx;
+}
+
+.cj-info-box{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+}
+.cj-info{
+    width: 680rpx;
+    background: #fff;
+    font-size: 28rpx;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    border-radius: 5rpx;
+}
+.cj-info view{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px #d4d4d4 solid;
+    padding: 20rpx 0;    
+}
+.cj-info view text{
+    max-width: 50%;
+}

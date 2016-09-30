@@ -1,0 +1,40 @@
+<!--ykt.wxml-->
+<view class="container">
+    <view class="ykt-ye">
+        <text class="ykt-ye-name">余额</text>
+        <text class="ykt-ye-money">
+            <text>{{dict[0].balance}}</text>元
+        </text>
+    </view>
+    <view class="canvas-wraper">
+        <canvas bindtouchend="canvasTap" style="width: 100%; height: 100%;" canvas-id="firstCanvas"></canvas> 
+    </view>
+    <view class="ykt-detail-wraper">
+        <view class="ykt-head {{showDetail ? 'ykt-head-show' : ''}}" bindtap="slideDetail">
+            <text class="ykt-type-name">消费详情</text>
+            <image class="ykt-icon" src="/images/core/icon_ykt.png" />
+        </view>                
+        <view class="ykt-detail {{showDetail ? 'ykt-detail-show' : ''}}">
+            <!--<view class="detail-list detail-type">
+                <text class="time">具体消费时间</text>
+                <text>消费类型</text>
+                <text>消费金额</text>
+                <text>余额</text>
+            </view>
+            <view class="detail-list" wx:for="{{dict}}" wx:for-item="itemName">
+                <text class="time">{{itemName.time}}</text>
+                <text>{{itemName.transaction}}</text>
+                <text>{{itemName.cost}}</text>
+                <text>{{itemName.balance}}</text>
+            </view>-->
+            <view class="detail">
+                <text>消费时间：{{tapDetail.time}}</text>
+                <text>消费类型：{{tapDetail.transaction}}</text>
+                <text>消费金额：{{tapDetail.cost}}</text>
+                <text>消费设备：{{tapDetail.device}}</text>
+                <text>消费地点：{{tapDetail.address}}</text>
+                <text>余额：{{tapDetail.balance}}</text>
+            </view>
+        </view>
+    </view>
+</view>

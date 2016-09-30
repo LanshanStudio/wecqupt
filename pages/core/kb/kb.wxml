@@ -1,0 +1,168 @@
+<!--kb.wxml-->
+<view class="container">
+    <!-- 主体 -->
+    <view class="blur-area {{blur}}">
+        <!-- 可滚动的部分 -->
+        <scroll-view bindscroll="onScroll" bindscrolltolower="overLower" style="height:92vh;margin-top:{{_marginTop}}px" scroll-x="{{scrollX}}" scroll-y="{{scrollY}}" class="kb-ctn" scroll-top="{{scroll.top}}" scroll-left="{{scroll.left}}">
+            <!-- 左边课数，34节和78节marginBottom为12rpx，其他均为4rpx，课程卡片与这相同 -->
+            <view class="kb-num-ctn" style="">
+                <view class="mg-4-t">1</view>
+                <view class="mg-4">2</view>
+                <view>3</view>
+                <view class="mg-12">4</view>
+                <view>5</view>
+                <view class="mg-4">6</view>
+                <view>7</view>
+                <view class="mg-12">8</view>
+                <view>9</view>
+                <view class="mg-4">0</view>
+                <view>1</view>
+                <view>2</view>
+            </view>
+            <!-- 卡片部分 -->
+                <view class="kb-cards-ctn">
+                    <!-- 每一列为一组 -->
+                    <view class="kb-cards-column">
+                        <view wx:if="{{day == '1'}}" class="kb-bg"></view>
+                        <view class="kb-title">周一</view>
+                        <!-- 循环当天的的6节课 -->
+                        <view class="kb-card {{wid%2==0?'mg-4':'mg-12'}}" wx:key="{{wid}}" wx:for="{{mon}}" wx:for-index="wid">
+                            <!-- 循环重叠课 -->
+                            <block wx:for="{{mon[wid]}}" wx:key="{{cid}}" wx:for-item="cards" wx:for-index="cid">
+                                <!-- 循环周数，与当前周相同或当前周为*时显示 -->
+                                <view style="height:{{cards.number*100}}rpx" data-cid="{{cid}}" data-week="0" data-class="{{wid}}" bindtap="showDetail" wx:key="{{index}}" class="mg-4 kb-card-content {{cid!==0?'k-sec':''}} {{cards.color}}" wx:for="{{cards.weeks}}" wx:for-item="weeks" wx:if="{{weeks == week || week == '*'}}">
+                                    <!-- 判断上课地点是数字还是汉字 -->
+                                    <text wx:if="{{cards.place < '99999'}}" class="kb-card-place-num">{{cards.place}}</text>
+                                    <text wx:if="{{cards.place > '99999'}}" class="kb-card-place-words">{{cards.place}}</text>
+                                    <text class="kb-card-name">{{cards.name}}</text>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="kb-cards-column">
+                        <view wx:if="{{day == '2'}}" class="kb-bg"></view> 
+                        <view class="kb-title">周二</view>            
+                        <view class="kb-card {{wid%2==0?'mg-4':'mg-12'}}" wx:key="{{wid}}" wx:for="{{tue}}" wx:for-index="wid">
+                            <block wx:for="{{tue[wid]}}" wx:key="{{cid}}" wx:for-item="cards" wx:for-index="cid">
+                                <view style="height:{{cards.number*100}}rpx" data-cid="{{cid}}" data-week="1" data-class="{{wid}}" bindtap="showDetail" wx:key="{{index}}" class="mg-4 kb-card-content {{cid!==0?'k-sec':''}} {{cards.color}}" wx:for="{{cards.weeks}}" wx:for-item="weeks" wx:if="{{weeks == week || week == '*'}}">
+                                    <text wx:if="{{cards.place < '99999'}}" class="kb-card-place-num">{{cards.place}}</text>
+                                    <text wx:if="{{cards.place > '99999'}}" class="kb-card-place-words">{{cards.place}}</text>
+                                    <text class="kb-card-name">{{cards.name}}</text>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="kb-cards-column">
+                        <view wx:if="{{day == '3'}}" class="kb-bg"></view>                
+                        <view class="kb-title">周三</view>
+                        <view class="kb-card {{wid%2==0?'mg-4':'mg-12'}}" wx:key="{{wid}}" wx:for="{{wed}}" wx:for-index="wid">
+                            <block wx:for="{{wed[wid]}}" wx:key="{{cid}}" wx:for-item="cards" wx:for-index="cid">
+                                <view style="height:{{cards.number*100}}rpx" data-cid="{{cid}}" data-week="2" data-class="{{wid}}" bindtap="showDetail" wx:key="{{index}}" class="mg-4 kb-card-content {{cid!==0?'k-sec':''}} {{cards.color}}" wx:for="{{cards.weeks}}" wx:for-item="weeks" wx:if="{{weeks == week || week == '*'}}">
+                                    <text wx:if="{{cards.place < '99999'}}" class="kb-card-place-num">{{cards.place}}</text>
+                                    <text wx:if="{{cards.place > '99999'}}" class="kb-card-place-words">{{cards.place}}</text>
+                                    <text class="kb-card-name">{{cards.name}}</text>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="kb-cards-column">
+                        <view wx:if="{{day == '4'}}" class="kb-bg"></view>                
+                        <view class="kb-title">周四</view>
+                        <view class="kb-card {{wid%2==0?'mg-4':'mg-12'}}" wx:key="{{wid}}" wx:for="{{thu}}" wx:for-index="wid">
+                            <block wx:for="{{thu[wid]}}" wx:key="{{cid}}" wx:for-item="cards" wx:for-index="cid">
+                                <view style="height:{{cards.number*100}}rpx" data-cid="{{cid}}" data-week="3" data-class="{{wid}}" bindtap="showDetail" wx:key="{{index}}" class="mg-4 kb-card-content {{cid!==0?'k-sec':''}} {{cards.color}}" wx:for="{{cards.weeks}}" wx:for-item="weeks" wx:if="{{weeks == week || week == '*'}}">
+                                    <text wx:if="{{cards.place < '99999'}}" class="kb-card-place-num">{{cards.place}}</text>
+                                    <text wx:if="{{cards.place > '99999'}}" class="kb-card-place-words">{{cards.place}}</text>
+                                    <text class="kb-card-name">{{cards.name}}</text>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="kb-cards-column">
+                        <view wx:if="{{day == '5'}}" class="kb-bg"></view>
+                        <view class="kb-title">周五</view>
+                        <view class="kb-card {{wid%2==0?'mg-4':'mg-12'}}" wx:key="{{wid}}" wx:for="{{fri}}" wx:for-index="wid">
+                            <block wx:for="{{fri[wid]}}" wx:key="{{cid}}" wx:for-item="cards" wx:for-index="cid">
+                                <view style="height:{{cards.number*100}}rpx" data-cid="{{cid}}" data-week="4" data-class="{{wid}}" bindtap="showDetail" wx:key="{{index}}" class="mg-4 kb-card-content {{cid!==0?'k-sec':''}} {{cards.color}}" wx:for="{{cards.weeks}}" wx:for-item="weeks" wx:if="{{weeks == week || week == '*'}}">
+                                    <text wx:if="{{cards.place < '99999'}}" class="kb-card-place-num">{{cards.place}}</text>
+                                    <text wx:if="{{cards.place > '99999'}}" class="kb-card-place-words">{{cards.place}}</text>
+                                    <text class="kb-card-name">{{cards.name}}</text>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="kb-cards-column">
+                        <view wx:if="{{day == '6'}}" class="kb-bg"></view>
+                        <view class="kb-title">周六</view>
+                        <view class="kb-card {{wid%2==0?'mg-4':'mg-12'}}" wx:key="{{wid}}" wx:for="{{sat}}" wx:for-index="wid">
+                            <block wx:for="{{sat[wid]}}" wx:key="{{cid}}" wx:for-item="cards" wx:for-index="cid">
+                                <view style="height:{{cards.number*100}}rpx" data-cid="{{cid}}" data-week="5" data-class="{{wid}}" bindtap="showDetail" wx:key="{{index}}" class="mg-4 kb-card-content {{cid!==0?'k-sec':''}} {{cards.color}}" wx:for="{{cards.weeks}}" wx:for-item="weeks" wx:if="{{weeks == week || week == '*'}}">
+                                    <text wx:if="{{cards.place < '99999'}}" class="kb-card-place-num">{{cards.place}}</text>
+                                    <text wx:if="{{cards.place > '99999'}}" class="kb-card-place-words">{{cards.place}}</text>
+                                    <text class="kb-card-name">{{cards.name}}</text>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="kb-cards-column">
+                        <view wx:if="{{day == '0'}}" class="kb-bg"></view>
+                        <view class="kb-title">周天</view>
+                        <view class="kb-card {{wid%2==0?'mg-4':'mg-12'}}" wx:key="{{wid}}" wx:for="{{sun}}" wx:for-index="wid">
+                            <block wx:for="{{sun[wid]}}" wx:key="{{cid}}" wx:for-item="cards" wx:for-index="cid">
+                                <view style="height:{{cards.number*100}}rpx" data-cid="{{cid}}" data-week="6" data-class="{{wid}}" bindtap="showDetail" wx:key="{{index}}" class="mg-4 kb-card-content {{cid!==0?'k-sec':''}} {{cards.color}}" wx:for="{{cards.weeks}}" wx:for-item="weeks" wx:if="{{weeks == week || week == '*'}}">
+                                    <text wx:if="{{cards.place < '99999'}}" class="kb-card-place-num">{{cards.place}}</text>
+                                    <text wx:if="{{cards.place > '99999'}}" class="kb-card-place-words">{{cards.place}}</text>
+                                    <text class="kb-card-name">{{cards.name}}</text>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+        </scroll-view>        
+    </view>
+    <!-- 遮罩层 -->
+    <view bindtap="hideDetail" style="margin-top:{{_fixedMarginTop}}px;margin-left:{{_fixedMarginLeft}}px" class="kb-detail {{detail}}">
+        <view class="kb-detaile-card-ctn week-{{tapTarget.week}} class-{{tapTarget.class}}">
+            <!-- cid与被点击课的cid相等的卡片显示在最上层 -->
+            <view class="kb-card kb-detail-card {{cid == targetCid?'target-card':''}}" wx:key="{{cid}}" wx:for="{{lessons[tapTarget.week][tapTarget.class]}}" wx:for-index="cid">
+                <view style="height:{{item.number*100}}rpx;margin-left:{{cid*10}}rpx" class="kb-card-content {{item.color}}">
+                    <text wx:if="{{item.place < '99999'}}" class="kb-card-place-num">{{item.place}}</text>
+                    <text wx:if="{{item.place > '99999'}}" class="kb-card-place-words">{{item.place}}</text>
+                    <text class="kb-card-name">{{item.name}}</text>               
+                </view>
+            </view>
+        </view>
+    </view> 
+    <!-- 底部 -->
+    <view class="kb-info-ctn">
+        <view class="kb-info-title">
+            <text class="kb-info-week">{{day_cn}}</text>
+            <view class="kb-swiper-mask-left"></view>
+            <view class="kb-swipers">
+                <swiper style="display:{{detail=='detail'?'none':'inline-block'}}" current="{{_current}}" bindchange="currentChange" class="kb-week-swiper" duration="300">
+                    <block wx:key="{{index}}" wx:for="{{_weeks}}">
+                        <swiper-item class="kb-week-swiper-item">
+                            <text>{{item}}</text>
+                        </swiper-item>
+                    </block>
+                </swiper>
+                <view class="detail-week" style="display:{{detail=='detail'?'inline-block':'none'}}">{{_weeks[week-1]}}</view>            
+            </view>
+            <view class="kb-swiper-mask-right"></view>
+        </view>
+        <view class="kb-info-card-scroll" style="height:{{_bottomHeight}}px" scroll-x="true">
+            <view data-cid="{{cid}}" class="kb-info-card {{!cid?'':'kb-info-card-shadow'}}" bindtap="infoCardTap" style="z-index:{{cid}};margin-left:{{infoMarginLeft[cid]}}" wx:key="{{cid}}" wx:for="{{lessons[tapTarget.week][tapTarget.class]}}" wx:for-index="cid">
+                <view class="kb-info-card-content">
+                    <text class="info-type">{{item.type}}</text>                
+                    <text class="info-name">{{item.name}}</text>
+                    <text class="info-item">任课教师：{{item.teacher}}</text>
+                    <text class="info-item">上课地点：{{item.place}}</text>
+                    <text class="info-item">课程周数：{{item.all_week}}</text>
+                    <text class="info-item">课程学分：{{item.xf}}</text>
+                    <text class="info-item">班级编号：{{item.class_id}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

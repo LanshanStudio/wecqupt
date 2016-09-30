@@ -1,0 +1,91 @@
+/**bx_detail.wxss**/
+.container{
+    padding-bottom: 55rpx;
+    background-color: #f0eff5;
+}
+
+.repair-state-panel, .work-sheet-panel{
+    margin-top: 30rpx; 
+}
+.repair-state-title, .work-sheet-title{
+    margin-left: 30rpx;
+}
+.repair-state, .work-sheet{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+}
+.repair-state{
+    padding-left: 63rpx;
+    padding-top: 34rpx;
+    padding-bottom: 34rpx;
+}
+.repair-state-item{
+    /*border-left: 1px solid #bfbfbf;*/
+    display: flex;
+    align-items: flex-start;
+}
+.repair-state-item.repair-state-last{
+    border-left: none; 
+}
+.repair-state-icon{
+
+    width: 65rpx;
+    height: 65rpx;
+    margin-left: -32.5rpx;
+}
+
+.repair-info-item{
+    display: flex;
+    align-items: center;
+    height: 55rpx;
+}
+.repair-info-item.repair-info-note{
+   align-items: flex-start;
+   padding-bottom: 34rpx;
+}
+.repair-note-ft{
+    padding-left: 120rpx;
+}
+.repair-state-info{
+    /*border-bottom: 1px solid #e5e5e5;*/
+    margin-left: 25rpx;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+.work-sheet{
+    padding-top: 34rpx;
+    padding-bottom: 34rpx;
+}
+.repair-state-info.last-repair-state-info{
+    border-bottom: none;
+}
+.repair-info-ft{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 35rpx;
+}
+.repair-note-ft{
+    text-align: right;
+    
+}
+
+.work-sheet-item{
+    display: flex;
+    align-items: center;
+    height: 55rpx;
+    margin-left: 30rpx;
+}
+.work-sheet-ft{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30rpx;
+}

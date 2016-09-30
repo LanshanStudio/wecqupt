@@ -1,0 +1,89 @@
+/**bx.wxss**/
+.container{
+    padding-bottom: 55rpx;
+    background-color: #f0eff5;
+}
+.service-declare{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin-top: 35rpx; 
+}
+.service-declare-item{
+    display: flex;
+    align-items: center;
+    height: 88rpx;
+    margin-left: 35rpx;
+}
+.service-declare-name{
+    letter-space: 2px;
+}
+.service-declare-more{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 25rpx;
+}
+.service-declare-open{
+    width: 15rpx;
+    height: 25rpx;
+}
+
+.process{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin-top: 35rpx; 
+}
+.process-hd{
+    display: flex;
+    align-items: center;
+    height: 120rpx;
+    margin-left: 30rpx;
+    border-bottom: 1px solid #e5e5e5;
+}
+.review-process-icon{
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 17rpx;
+}
+.order-number-name{
+    letter-space: 2px;
+}
+.process-state{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 32rpx;
+    
+}
+.process-bd{
+    padding: 33rpx 30rpx;
+}
+.process-item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30rpx;
+}
+.service-time{
+    margin-bottom: 0rpx;
+}
+.process-item-bd{
+    display:flex;
+}
+.process-item-ft{
+    display: flex;
+}
+.service-detail-open{
+    text-align: center;
+    padding-top: 33rpx;
+    padding-bottom: 33rpx;
+    border-top: 1px solid #e5e5e5;
+    color: #00c200;
+}

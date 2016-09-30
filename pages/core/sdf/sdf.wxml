@@ -1,0 +1,75 @@
+<!--sdf.wxml-->
+<view class="container">
+    <!--query-page-->
+    <view class="query-page" hidden="{{!pageDispaly}}">
+        <!--query-page-->
+        <image class="query-image" src="/images/core/sdf/queryBg.jpg" alt="query-image"/>
+        <!--query-form-->
+        <form class="query-form" bindsubmit="formSubmit">
+            <view class="error-layout">
+                <text class="error-display" hidden="{{error.display}}">错误提示:{{error.message}}</text>
+            </view>
+            <view class="form-buildingNo form-input">
+                <!--
+                <picker bindchange="bindBuildingNoChange" value="{{curBuilding}}" range="{{buildingNo}}">
+                    <view class="picker">{{curBuilding || "楼栋号"}}</view>
+                </picker>
+                -->
+                <input class="form-buildingNo-input" value="{{curBuilding}}" placeholder="请输入楼栋号" maxlength="3" bindinput="bindBuildingInput" auto-focus require/>   
+            </view>
+            <view class="form-dormitoryNo form-input">
+                <!--                
+                <picker bindchange="bindDormitoryNoChange" value="{{curDormitory}}" range="{{dormitoryNo}}">
+                    <view class="picker">{{curDormitory || "房间号"}}</view>
+                </picker>
+                -->
+                <input class="form-buildingNo-input" value="{{curDormitory}}" placeholder="请输入房间号" maxlength="3" bindinput="bindDormitoryInput" require/> 
+            </view>
+            <view class="form-subBtn">
+                <button class="sameBtn" formType="submit">查询</button>
+            </view>
+        </form>
+    </view>
+
+    <!--result-page-->
+    <view class="result-page" hidden="{{pageDispaly}}">
+        <!--result-userInfo-->
+        <view class="result-userInfo result-model">
+            <view class="userInfo-basic">
+                <text class="basic-name">{{userInfo.userName}}</text>
+                <text class="basic-time">{{renderData.nowTime}}</text>
+            </view>
+            <view class="userInfo-dormitory">
+                <text class="dormitory-info">{{renderData.building}} {{renderData.room}} 寝室</text>
+                <button class="dormitory-resetBtn sameBtn" catchtap="catchResetDormitory">重置寝室</button>
+            </view>
+        </view>
+        <!--result-chargeInfo-->
+        <view class="result-chargeInfo result-model">
+            <view class="chargeInfo-num chargeInfo-model">
+                <text class="chargeInfo-model-title">本月用电</text>
+                <view class="chargeInfo-model-info">
+                    <text class="model-info">{{renderData.elec_spend}}</text>度
+                </view>
+            </view>
+            <view class="chargeInfo-cost chargeInfo-model">
+                <text class="chargeInfo-model-title">本月电费</text>
+                <view class="chargeInfo-model-info">
+                    <text class="model-info">{{renderData.elec_cost}}</text>元
+                </view>
+            </view>
+        </view>
+        <!--result-specificInfo-->
+        <view class="result-specificInfo result-model">
+            <view class="specificInfo-item"><text>电起度</text><text class="specificInfo-item-value">{{renderData.elec_start}} 度</text></view>
+            <view class="specificInfo-item"><text>电止度</text><text class="specificInfo-item-value">{{renderData.elec_end}} 度</text></view>
+            <view class="specificInfo-item"><text>当月免费电量</text><text class="specificInfo-item-value">{{renderData.elec_free}} 度</text></view>
+        </view>
+        <!--result-returnBtn-->
+        <view class="result-returnBtn result-model">
+            <button class="sameBtn" catchtap="catchReturnQuery">返回</button>
+        </view>
+        <!--result-image-->
+        <image class="result-image result-model" src="/images/core/sdf/resultBg.png" alt="result-image"/>
+    </view>
+</view>

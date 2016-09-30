@@ -1,0 +1,89 @@
+/**ykt.wxss**/
+.ykt-ye {
+    display: flex;
+    flex-direction: column;
+    margin: 26rpx;
+    height: 200rpx;
+    width: 60%;
+    background: #faf9f7;
+}
+.ykt-ye-name {
+    font-size: 25rpx;
+    line-height: 50rpx;
+    padding-left: 29rpx;
+}
+.ykt-ye-money {
+    font-size: 28rpx;
+    padding-left: 86rpx;
+}
+.ykt-ye-money text {
+    font-size: 72rpx;
+    line-height: 110rpx;
+    padding-right: 26rpx;
+}
+
+.ykt-detail-wraper {
+    display: flex;
+    flex-direction: column;
+    margin: 52rpx 26rpx 0;
+}
+.ykt-detail {
+    display: flex;
+    flex-direction: column;   
+    padding: 0 10rpx;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-in-out;
+    background: #FAF9F7
+}
+.ykt-detail text {
+    font-size: 25rpx;
+}
+.ykt-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 37rpx 27rpx;
+    border-radius: 4px;
+    background: #FAD864;
+}
+.ykt-type-name {
+    font-size: 28rpx;
+    color: #fff;
+}
+.ykt-detail-show {
+    max-height: 1000rpx;  
+}
+.detail-list {
+    display: flex;
+    justify-content: space-between;
+    line-height: 74rpx;
+    border-bottom: 1px solid #d4d4d4;
+}
+.detail-list:last-child {
+    border: none;
+}
+.ykt-icon{
+    width: 35rpx;
+    height: 20rpx;  
+    transition: transform .2s;
+    transform: rotate(0deg);
+}
+.ykt-head-show .ykt-icon{
+    transform: rotate(180deg);
+}
+
+.canvas-wraper {
+    width: 100%;
+    height: 750rpx;
+    overflow: hidden;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+}
+.detail text {
+    line-height: 74rpx;
+    border-bottom: 1px solid #d4d4d4;
+}

@@ -1,0 +1,238 @@
+/**sdf.wxss**/
+
+.container {
+
+    display: flex;
+    color: #000;
+    background: #f0eff5;
+}
+
+    .query-page,
+    .result-page {
+
+        display: flex;
+        flex: 1;
+        flex-flow: column nowrap;
+        align-content: space-around;
+        height: 100%;
+    }
+
+    .sameBtn {
+
+        color: #FFF;
+        background-color: #5dc8f7;
+        letter-spacing: 15rpx;
+    }
+
+/* ==========================================================================
+   query-page
+ ============================================================================ */
+.query-page {
+
+    font-family: "微软雅黑";
+}
+
+/* query-image
+ ============================================================================ */
+.query-image {
+
+    flex: 1;
+    width: 100%;
+    height: 619rpx;
+}
+
+/* query-form
+ ============================================================================ */
+.query-form {
+
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+    padding: 0 30rpx;
+}
+    .error-layout {
+
+        display: flex;
+        flex: 1;
+        padding: 30rpx 0;
+        height: 1.8em;
+    }
+
+    .error-display {
+
+        font-size: 1.8em;
+        color: red;
+        text-indent: 1em;
+    }
+    
+    .form-input {
+
+        flex: 1;
+        margin: 16rpx 0;
+        background-color: #FFF;
+        /*background: #fff url('/images/core/sdf/arrowsdown.png') no-repeat scroll 96% center;*/
+        font-size: 1.6em;
+        color: #7F848A;
+    }
+
+        .form-input input {
+
+            border: 1px solid #eee;
+            padding: 20rpx 0 20rpx 42rpx;
+            width: 90%;
+        }
+
+    .form-dormitoryNo {
+
+        margin: 45rpx 0 100rpx 0;
+    }
+
+ /* ==========================================================================
+   result-page
+ ============================================================================ */
+.result-page {
+
+    padding: 50rpx 30rpx 0 30rpx;
+    height: 100%;
+    font-size: 1.7em;
+    color: #7F848A;
+    background-color: #FFF;
+}
+    .result-model {
+
+        display: flex;
+        flex: 1;
+        flex-flow: column nowrap;
+        background-color: #FAF9F7;
+    }
+
+/* result-userInfo
+ ============================================================================ */
+.result-userInfo {
+
+    padding: 43rpx 30rpx 12rpx 40rpx;
+}
+    .userInfo-basic {
+
+        display: flex;
+        flex: 1;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 13rpx 0 38rpx 0;
+    }
+        .basic-name {
+
+            flex: 1;
+            font-size: 1.5em;
+        }
+
+        .basic-time {
+
+            flex: 1;
+            font-size: 0.8em;
+            text-align: right;
+        }
+    .userInfo-dormitory {
+
+        display: flex;
+        flex: 1;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        height: 58rpx;
+        line-height: 58rpx;
+        font-size: 0.8em;
+    }
+        .dormitory-info {
+
+            flex: 1;
+        }
+        .dormitory-resetBtn {
+
+            flex: none;
+            margin: 0;
+            padding: 0;
+            width: 166rpx;
+            height: 58rpx;
+            line-height: 58rpx;
+            font-size: 1.2em;
+            letter-spacing: 0;
+            background-color: #7F848A;
+        }
+
+ /* result-chargeInfo
+ ============================================================================ */
+.result-chargeInfo {
+
+    display: flex;
+    flex: 1;
+    flex-flow: row nowrap;
+    margin: 30rpx 0;
+    background-color: #FFF;
+}
+    .chargeInfo-model {
+
+        flex: 1;
+        padding: 13rpx 50rpx 0 18rpx;
+        background-color: #FAF9F7;
+    }
+
+    .chargeInfo-num {
+
+        margin-right: 35rpx;
+    }
+        .chargeInfo-model-title {
+
+            font-size: 0.7em;
+        }
+
+        .chargeInfo-model-info {
+
+            margin-top: 65rpx;
+            text-align: right;
+        }
+            .model-info {
+
+                margin-right: 10rpx;
+                font-size: 2em;
+            }
+
+/* result-specificInfo
+ ============================================================================ */
+.result-specificInfo {
+    
+    flex: 2;
+    padding: 0 40rpx;
+}
+    .specificInfo-item {
+
+        display: flex;
+        flex: 1;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 34rpx 0 50rpx 0;
+    }
+        .specificInfo-item text {
+
+            flex: 1;
+        }
+        .specificInfo-item .specificInfo-item-value {
+
+            text-align: right;
+        }
+
+/* result-returnBtn
+ ============================================================================ */
+.result-returnBtn {
+
+    margin-top: 100rpx;
+    display: block;
+}
+
+/* result-image
+ ============================================================================ */
+.result-image {
+
+    flex: 1;
+    width: 100%;
+    height: 90rpx;
+}

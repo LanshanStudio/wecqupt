@@ -1,0 +1,120 @@
+/**bx_apply.wxss**/
+.container{
+    padding-bottom: 55rpx;
+    background-color: #f0eff5;
+}
+.repair-detail{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 35rpx;
+    overflow: hidden;
+}
+.repair-detail-item-hd.service-area-hd{
+    border-bottom: none;
+}
+.repair-detail-item{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+}
+.repair-detail-item-hd{
+    display: flex;
+    align-items: center;
+    height: 88rpx;
+    margin-left: 30rpx;
+}
+.repair-detail-item-ft{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30rpx;
+}
+.more-icon{
+    width: 15rpx;
+    height: 25rpx;
+    margin-left: 20rpx;
+}
+
+.more-icon-close{
+    transform: rotate(-90deg);
+    transition: transform .4s;
+}
+.service-info-show .more-icon-close{
+    transition: transform .4s;
+    transform: rotate(90deg);
+}
+
+
+
+.reporter-detail{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin-top: 35rpx;
+    overflow: hidden;
+}
+.reporter-detail-item{
+    display: flex;
+    align-items: center;
+    height: 88rpx;
+    border-bottom: 1px solid #ddd;
+    margin-left: 30rpx;
+}
+
+
+.service-cells-items{
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+}
+.servcie-cell-item{
+    height: 70rpx;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+.servcie-cell-item:last-child{
+    border-bottom: none;
+}
+.reporter-detail-item.reporter-tel{
+    border-bottom: none
+}
+.reporter-detail-item-input{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30rpx;
+    padding-left: 45rpx;
+}
+.reporter-detail-item-input input{
+    width: 100%;
+}
+.declare-context{
+    display: flex;
+    flex-direction: column;
+    margin-top: 35rpx;
+    overflow: hidden;
+}
+.declare-context-panel{
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 30rpx;
+}
+.declare-context-title{
+    margin-left: 30rpx;
+}
+.declare-context-textarea{
+    width: 100%;
+}
+.submit-declare{
+    padding: 38rpx 30rpx 0rpx 30rpx;
+}
+.submit-declare .submit-declare-btn{
+    background-color: #75c6b2;
+}

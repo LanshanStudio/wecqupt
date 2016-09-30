@@ -1,0 +1,249 @@
+/**xs.wxss**/
+
+.container {
+
+    /*background: #F7F7F7 url('/images/core/xs/bg.png') no-repeat;*/
+    /*微信暂不支持静态bgimg文件，改用服务器url*/
+    background: #F7F7F7 url('https://we.cqu.pt/app/images/core/xs/bg.png') no-repeat;
+    background-size: 250rpx 250rpx;
+    background-position: 50% 50%;
+    padding: 0;
+}
+
+/* ==========================================================================
+   header
+ ============================================================================ */
+.header {
+
+    display: flex;
+    min-height: 85rpx;
+    background-color: #EFEFF4;
+    overflow: hidden;
+}
+/* header-search
+ ============================================================================ */
+.header-search {
+
+    position: relative;
+    display: flex;
+    flex: 1;
+    background-color: #FFF;
+    overflow: hidden;
+}
+/* search-input
+ ============================================================================ */
+.search-input {
+
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+    .js-fous-input {
+        /*background: url('/images/core/xs/search-sign.png') no-repeat;*/
+        /*微信暂不支持静态bgimg文件，改用服务器url*/
+        background: url('https://we.cqu.pt/app/images/core/xs/search-sign.png') no-repeat;
+        background-size: 30rpx 30rpx;
+        background-position: 25rpx 50%;
+
+    }
+    .input-text {
+        
+        flex: 1;
+        padding: 0 75rpx;
+        font-size: 11pt;
+        height: 85rpx;
+        line-height: 85rpx;
+    }
+    .input-confirm-button {
+
+        color: #888;
+        font-weight: bold;
+        padding: 0 25rpx;
+        height: 85rpx;
+        line-height: 85rpx;
+    }
+/* search-state
+ ============================================================================ */
+.search-state {
+
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+    .search-icon {
+
+        width: 30rpx;
+        height: 30rpx;
+    }
+    .state-text {
+        
+        margin-left: 20rpx;
+        color: #b1b1b1;
+        text-align: center;
+    }
+
+/* ==========================================================================
+   search-message
+ ============================================================================ */
+.search-message {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100rpx;
+}
+    .message-title {
+
+        color: #aaa;
+    }
+
+/* ==========================================================================
+   main
+ ============================================================================ */
+ .main {
+
+    display: flex;
+    width: 100%;
+    flex-flow: column nowrap;
+    overflow: hidden;
+    background-color: #f7f7f7;
+ }
+  /* main-title
+ ============================================================================ */
+.main-title {
+
+    flex: 1;
+    margin: 35rpx 0 20rpx 25rpx;
+}
+    .title-text {
+        color: #999;
+    }
+  /* main-list
+ ============================================================================ */
+.main-list {
+
+    display: flex;
+    flex: 1;
+    flex-flow: column nowrap;
+    align-items: stretch;
+}
+    .list-item {
+
+        display: flex;
+        margin-bottom: 20rpx;
+        padding: 0 20rpx;
+        flex-flow: column nowrap;
+        align-items: stretch;
+        background-color: #fff;
+        font-size: 11pt;
+    }
+  /* main-list > item
+ ============================================================================ */
+.item {
+
+    display: flex;
+    padding: 20rpx;
+    padding-right: 0;
+    align-items: center;
+}
+    .item-content {
+
+        flex: 1;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+        .item-content-image {
+            
+            display: flex;
+            width: 100rpx;
+            height: 100rpx;
+        }
+        .item-content-state {
+
+            margin-left: 20rpx;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-content: flex-start;
+        }
+            .content-state-name {
+                font-size: 12pt;
+                line-height: 175%;
+                letter-spacing: 1px;
+            }
+                .state-name-active {
+                    color: #8271bf;
+                }
+            .content-state-stuId {
+
+                color: #999;
+            }
+  /* main-list > item > list-sign
+ ============================================================================ */
+.list-sign {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .list-sign-icon {
+
+        width: 30rpx;
+        height: 30rpx;
+        padding: 20rpx;
+        transition: transform .2s;
+        transform: rotate(0deg);
+    }
+    .list-sign-icon-show {
+
+        transform: rotate(180deg);
+    }
+  /* main-list > item > item-ul
+ ============================================================================ */
+.item-ul {
+    
+    display: flex;
+    flex: 1;
+    flex-flow: column nowrap;
+    padding: 10rpx 30rpx 15rpx;
+    overflow: hidden;
+}
+    .item-ul-li {
+
+        display: flex;
+        border-top: 1px solid #eee;
+        padding: 25rpx 5rpx 20rpx;
+    }
+        .ul-li-label {
+            
+            color: #888;
+            width: 48pt;
+        }
+
+        .ul-li-content {
+
+            flex: 1;
+        }
+
+        .ul-li-kb {
+
+            /*background: url('/images/core/kb.png') no-repeat;*/
+            /*微信暂不支持静态bgimg文件，改用服务器url*/
+            background: url('https://we.cqu.pt/app/images/core/kb.png') no-repeat;
+            background-size: 30rpx 30rpx;
+            background-position: 0 50%;
+            color: #888;
+            font-size: 10pt;
+            padding-left: 40rpx;
+        }
+            
+            
+
+
+

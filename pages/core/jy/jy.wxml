@@ -1,0 +1,37 @@
+<!--jy.wxml-->
+<view class="container">
+    <text wx:if="{{!message}}" class="current-type">借阅记录</text>
+    <text wx:else class="current-type">{{message}}</text>
+    <block wx:for="{{jyData}}" wx:for-item="itemName">
+        <view class="book-wraper">
+            <view class="book-info">
+                <text class="book-name">{{itemName.name}}</text>
+                <view class="book-date">
+                    <text>借阅日期：{{itemName.jsrq}}</text>
+                    <text>应还日期：{{itemName.yhrq}}</text>
+                </view>                
+            </view>
+            <image class="book-img" src="/images/core/jy.png" />
+        </view>
+        <view class="book-wraper">
+            <view class="book-info">
+                <text class="book-name">这是一个较短书名</text>
+                <view class="book-date">
+                    <text>借阅日期：{{itemName.jsrq}}</text>
+                    <text>应还日期：{{itemName.yhrq}}</text>
+                </view>                
+            </view>
+            <image class="book-img" src="/images/core/jy.png" />
+        </view>
+        <view class="book-wraper">
+            <view class="book-info">
+                <text class="book-name">这是一个超级超级超级超级超级超级超级超级超级超级长的书名</text>
+                <view class="book-date">
+                    <text>借阅日期：{{itemName.jsrq}}</text>
+                    <text>应还日期：{{itemName.yhrq}}</text>
+                </view>                
+            </view>
+            <image class="book-img" src="/images/core/jy.png" />
+        </view>
+    </block>
+</view>

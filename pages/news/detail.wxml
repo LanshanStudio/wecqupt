@@ -1,0 +1,26 @@
+<!--detail.wxml-->
+<view class="container">
+  <view class="title">
+    <text>{{title}}</text>
+  </view>
+  <view class="info">
+    <text>{{date}}</text>
+    <text class="author">{{author}}</text>
+    <text class="core">{{core}}</text>
+  </view>
+  <view class="detail">
+    <text>{{content}}</text>
+  </view>
+  <!--<view class="bottom">
+    <text>阅读 2333</text>
+    <text>投诉</text>
+  </view>-->
+  <navigator wx:if="{{file}}" class="file" bindtap="downloadFile">
+      <image src="/images/news/file.png" class="file-img"/>
+      <view >
+        <text class="file-name">{{fileName}}</text>
+        <text class="file-source">{{fileSource}}</text>
+      </view>   
+      <text>{{size}}</text>
+  </navigator>
+</view>

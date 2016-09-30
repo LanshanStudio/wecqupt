@@ -1,0 +1,27 @@
+<!--news.wxml-->
+<view class="container">
+  <!--新闻分类-->
+  <scroll-view class="filter" scroll-x="true">
+    <block wx:for="{{list}}" wx:key="id">
+      <image class="filter-item" data-id="{{item.id}}" id="{{item.type}}" bindtap="changeFilter" src="/images/news/{{item.type + (active.type === item.type ? '@colour.png' : '@gray.png')}}" />
+    </block>
+  </scroll-view>
+  
+  <!--新闻列表-->
+  <view class="content">
+    <block wx:for="{{active.data}}" wx:key="articleid">
+      <navigator url="/pages/news/{{item.type}}_detail?id={{item.articleid}}">
+        <view class="list-item {{item.type}}">
+          <view class="list-item-left">
+            <text class="list-item-title">{{item.title}}</text>
+            <text class="list-item-time">{{item.time}}</text>
+          </view>
+          <image class="list-item-icon" src="/images/news/{{item.type}}.png" />
+        </view>
+      </navigator>
+    </block>
+  </view>
+  
+  <!--提醒消息-->
+  <text class="content-ending">{{active.remind}}</text>
+</view>

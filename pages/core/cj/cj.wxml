@@ -1,0 +1,27 @@
+<!--cj.wxml-->
+<view class="container">
+
+    <view class="cj-info-ctn">
+    
+        <view class="cj-grade">
+            <view class="cj-grade-logo">
+                <image src="/images/core/cj.png"></image>
+            </view>
+            <view class="cj-grade-term">
+                <view class="cj-grade-fst">
+                    <text>{{xqNum.grade}} 学年 {{xqNum.semester}} 学期</text>
+                    <text class="grade-comment">大{{xqName.grade}}{{xqName.semester}}学期</text>
+                </view>
+            </view>
+        </view>
+        <view class="cj-info-box">
+            <view class="cj-info" wx:for="{{cjInfo}}">
+                <view>
+                    <text>{{item.course_name}}</text>
+                    <text>{{item.socres}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,34 @@
+<!--ks.wxml-->
+<view class="container">
+    <view class="ks-header">
+        <view class="ks-text">
+            <text class="ks-header-title">考试查询</text>
+            <text class="ks-header-info-ksName">{{ks.ksName}}</text>
+            <text class="ks-header-info">学生学号: {{ks.stuId}}</text>
+            <text class="ks-header-info">学生姓名: {{ks.stuName}}</text>
+        </view>
+        <view class="ks-bg">
+            <image src="/images/core/ks.png"></image>
+        </view>
+    </view>
+
+    <view class="ks-class-ctn">
+        <view class="ks-class-box" wx:for="{{class}}">
+            <view class="ks-class">
+                <view id="{{item.id}}" class="ks-class-name {{show[item.id] ? 'ks-class-name-show' : ''}}" bindtap="togglePage">
+                    <text>{{item.ksName}}</text>
+                    <view class="ks-class-arrow"></view>
+                </view>
+                <view class="ks-class-items-box {{show[item.id] ? '' : 'ks-class-items-hide'}}">
+                    <text class="ks-class-items ks-class-date">日期  {{item.ksDate}}</text>
+                    <text class="ks-class-items ks-class-time">时间  {{item.ksTime}}</text>
+                    <text class="ks-class-items ks-class-place">地点  {{item.ksPlace}}</text>
+                    <text class="ks-class-items ks-class-seat">座位  {{item.ksSeat}}</text>
+                </view>
+                
+            </view>
+        </view>
+    </view>
+    
+
+</view>
