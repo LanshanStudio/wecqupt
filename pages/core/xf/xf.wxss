@@ -1,1 +1,93 @@
 /**xf.wxss**/
+.container {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    background-color: #f7f7f7;
+    font-family: "微软雅黑";
+}
+
+/** 学费title **/
+.xf-title-wraper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40rpx;
+}
+.xf-title-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 40rpx;
+}
+.xf-stu-info {
+    display: flex;
+    flex-direction: column;
+}
+.xf-stu-info text {
+    line-height: 45rpx; 
+}
+.xf-title {
+    font-size: 44rpx;
+    font-weight: 500;
+    color: #000;
+}
+.xf-title-icon {
+     display: block;
+     width: 200rpx;
+     height: 200rpx;
+}
+
+/** 学费类型 **/
+.xf-types {
+    display: flex;
+    flex-direction: column;
+    margin-top: 72rpx;
+}
+.xf-type-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0 40rpx;
+    margin-bottom: 14.6rpx;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+.xf-type-item text {    
+    font-size: 30rpx;
+    color: #000;
+}
+.xf-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 50rpx 0;
+}
+.xf-detail {
+    display: none;
+    flex-direction: column;
+}
+.xf-detail-show {
+    display: flex;
+}
+.xf-detail text {
+    line-height: 74rpx;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+/**列表是否展开的icon旋转 **/
+.xf-item-icon{
+    width: 35rpx;
+    height: 20rpx;  
+    transition: transform .4s;
+    transform: rotate(0deg);
+}
+.xf-head-show {
+}
+.xf-head-show .xf-item-icon{
+    transform: rotate(180deg);
+}
+
+/**列表展开时标题的颜色变化 **/
+.xf-head-show .xf-type-name {
+    color: #c8c8c8;
+}
+
+
+
