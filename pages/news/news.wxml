@@ -1,13 +1,14 @@
 <!--news.wxml-->
 <view class="container">
   <scroll-view class="filter" scroll-x="true">
-    <block wx:for="{{filter.list}}">
-      <image class="filter-item" id="{{item.type}}" bindtap="changeFilter" src="/images/news/{{item.type + (filter.active === item.type ? '@colour.png' : '@gray.png')}}" />
+    <block wx:for="{{list}}">
+      <image class="filter-item" data-id="{{item.id}}" id="{{item.type}}" bindtap="changeFilter" src="/images/news/{{item.type + (active.type === item.type ? '@colour.png' : '@gray.png')}}" />
     </block>
   </scroll-view>
+  
   <view class="content">
-    <block wx:for="{{data.list}}">
-      <navigator url="/pages/news/detail?id={{item.id}}" wx:if="{{filter.active === 'all' || filter.active == item.type}}">
+    <block wx:for="{{active.data}}" wx:key="item.articleid">
+      <navigator url="/pages/news/{{item.type}}_detail?id={{item.articleid}}">
         <view class="list-item {{item.type}}">
           <view class="list-item-left">
             <text class="list-item-title">{{item.title}}</text>
@@ -18,4 +19,6 @@
       </navigator>
     </block>
   </view>
+  
+  <text class="content-ending">{{active.remind}}</text>
 </view>

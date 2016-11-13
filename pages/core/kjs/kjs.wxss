@@ -1,18 +1,16 @@
 /**kjs.wxss**/
 
 page {
-
     position: relative;
-    height: 91%; 
+    height: 100%;
 }
 
 .container {
 
     border-top: 1px solid #F8E2EB;
-    padding: 0 0 0 39rpx;
-    height: 100%;
-    color: #000;
-    background: #FFF;
+    background: #fff;
+    padding-bottom: 600rpx;
+    box-sizing: border-box;
 }
 
 
@@ -23,19 +21,18 @@ page {
 
     display: flex; 
     flex-flow: column nowrap;
-    padding: 53rpx 0 0 0;
-    height: 41%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    padding: 30rpx 45rpx;
 }
     .roomUl-floor {
 
         display: flex;
         flex: 0 0 auto;
         flex-flow: column nowrap;
-        margin-top: 27rpx;
-        padding: 0 0 20rpx 80rpx;
-        background: url('/images/core/kjs/classroom-icon.png') no-repeat scroll 0 0;
+        margin-top: 20rpx;
+        padding: 0 0 0 65rpx;
+        background: url('/images/core/kjs/classroom-icon.png') no-repeat;
+        background-size: 30rpx 25rpx;
+        background-position: 15rpx 8rpx;
     }
         .floor {
 
@@ -46,10 +43,11 @@ page {
             .floor text {
                 
                 flex: 0 0 auto;
-                padding-bottom: 31rpx;
-                min-width: 25%;
+                padding-bottom: 25rpx;
+                min-width: 20%;
                 font-size: 0.7rem;
                 letter-spacing: 0.1rem;
+                text-align: center;
             }
 /* ==========================================================================
    error-info
@@ -78,29 +76,30 @@ page {
  ============================================================================ */
 .main-condition {
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     z-index: 100;
     display: flex;
     flex-flow: column wrap;
     width: 100%;
+    height: 600rpx;
 }
     .condition {
 
         display: flex;
-        flex: 0 0 auto;
-        flex-flow: row nowrap;
-        padding: 0 0 0 39rpx;
-        height: 121rpx;
-        overflow-x: auto;
-        overflow-y: hidden;
+        box-sizing: border-box;
+        padding: 0 0 0 30rpx;
+        width: 100%;
+        height: 120rpx;
+        white-space: nowrap;
     }
         .condition-li {
 
-            flex: 0 0 auto;
-            width: 121rpx;
-            line-height: 121rpx;
+            display: inline-block;
+            width: 115rpx;
+            height: 120rpx;
+            line-height: 120rpx;
             text-align: center;
         }
         .week-active,
@@ -121,7 +120,9 @@ page {
 }
     .week-active {
 
-        background: url('/images/core/kjs/week-icon.png') no-repeat scroll 15rpx 10rpx;
+        background: url('/images/core/kjs/week-icon.png') no-repeat;
+        background-size: 100rpx 100rpx;
+        background-position: 50% 50%;
     }
 
 
@@ -133,7 +134,9 @@ page {
 }
     .day-active {
 
-        background: url('/images/core/kjs/day-icon.png') no-repeat scroll 15rpx 10rpx;
+        background: url('/images/core/kjs/day-icon.png') no-repeat;
+        background-size: 100rpx 100rpx;
+        background-position: 50% 50%;
     }
 
  /* main-condition > condition-classTime
@@ -145,7 +148,9 @@ page {
 }
     .classTime-active {
 
-        background: url('/images/core/kjs/classTime-icon.png') no-repeat scroll 15rpx 10rpx;
+        background: url('/images/core/kjs/classTime-icon.png') no-repeat;
+        background-size: 100rpx 100rpx;
+        background-position: 50% 50%;
     }
 
  /* main-condition > condition-building
@@ -157,7 +162,9 @@ page {
 }
     .building-active {
 
-        background: url('/images/core/kjs/building-icon.png') no-repeat scroll 15rpx 10rpx;
+        background: url('/images/core/kjs/building-icon.png') no-repeat;
+        background-size: 100rpx 100rpx;
+        background-position: 50% 50%;
     }
 
 
@@ -165,49 +172,19 @@ page {
  ============================================================================ */
 .query{
 
+    background-color: #FBFAF9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120rpx;
     
 }
     .query-button {
 
         display: block;
+        width: 94%;
         padding: 0;
         color: #FFF;
         background-color: #5ec8f7;
+        margin: 0 3%;
     }
-
-/*4/4s*/
-@media only screen
-and (min-device-height: 320px)
-and (max-device-height: 480px)
-and (orientation: portrait) {
-    
-    page {
-        height: 87%;
-    }
-
-    .week-active,
-    .day-active,
-    .classTime-active,
-    .building-active {
-        background-position: 0 0;
-    }
-
-}
-
-/*5*/
-@media only screen
-and (min-device-height: 500px) 
-and (max-device-height: 568px) 
-and (orientation: portrait) {
-  
-    page {
-        height: 89.3%;
-    }
-
-    .week-active,
-    .day-active,
-    .classTime-active,
-    .building-active {
-        background-position: 0 0;
-    }
-}

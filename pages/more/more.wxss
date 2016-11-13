@@ -1,1 +1,93 @@
 /**more.wxss**/
+.container{
+  background-color: #f4f4f4;
+  padding: 0;
+}
+.user-info, .issue-btn, .about-btn {
+  display: flex;
+  background-color: #fff;
+  min-height: 85rpx;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+/**user-info**/
+.user-info {
+  flex-direction: column;
+  margin: 30rpx 0 50rpx;
+  padding: 25rpx 30rpx 20rpx;
+}
+.info-hd {
+  display: flex;
+  align-items: center;
+}
+.user-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 5px;
+}
+.user-title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 25rpx;
+}
+.user-name {
+  font-size: 16pt;
+  line-height: 160%;
+  letter-spacing: 1px;
+}
+.user-id {
+  font-size: 11pt;
+  color: #9b9b9b;
+}
+.info-bd {
+  display: flex;
+  justify-content: space-between;
+  padding: 25rpx 15rpx 0 5rpx;
+  font-size: 11pt;
+  line-height: 150%;
+  color: #9b9b9b;
+}
+.info-bd-left, .info-bd-right {
+  display: flex;
+  flex-direction: column;
+}
+/**more-list**/
+.more-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.issue-btn, .about-btn {
+  align-items: center;
+  font-size: 13pt;
+  padding: 0 30rpx;
+}
+.issue-link, .about-link {
+  margin-bottom: 20rpx;
+}
+.btn-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 15rpx;
+}
+.btn-open {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.btn-enter {
+  width: 18rpx;
+  height: 27rpx;
+}
+.login-btn {
+  font-size: 13pt;
+  line-height: 85rpx;
+  height: 85rpx;
+  background: #e94f4f;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  margin: 30rpx 3%;
+}

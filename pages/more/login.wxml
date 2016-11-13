@@ -1,0 +1,24 @@
+<!--login.wxml-->
+<view class="container">
+  <view class="login-hd">
+    <image class="title" src="/images/more/title.png" mode="aspectFit" />
+    <image class="logo" src="/images/more/logo.png" />
+  </view>
+
+  <view class="login-bd">
+    <form class="login-form">
+      <view class="input-group {{userid_focus ? 'active' : ''}}">
+        <text class="input-label">帐号</text>
+        <input id="userid" maxlength="15" placeholder="学号 / 统一识别码" bindfocus="inputFocus" bindblur="inputBlur" />
+      </view>
+      <view class="input-group {{passwd_focus ? 'active' : ''}}">
+        <text class="input-label">密码</text>
+        <input id="passwd" password="true" maxlength="6" placeholder="身份证后六位" bindfocus="inputFocus" bindblur="inputBlur" />
+      </view>
+    </form>
+    <view class="confirm-btn">
+        <text>确认绑定</text>
+    </view>
+  </view>
+
+</view>

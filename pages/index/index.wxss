@@ -2,10 +2,12 @@
 .container{
   padding-bottom: 300rpx;
   background-color: #f0eff5;
-  background-image: url('/images/index/tri.png');
   background-repeat: no-repeat;
   background-size: 100% auto; 
   background-position: bottom center;
+  /*background-image: url('/images/index/tri.png');*/
+  /*微信暂不支持静态bgimg文件，改用服务器url*/
+  background-image: url('https://we.cqu.pt/app/images/index/tri.png');
 }
 /**功能导航**/
 .main-core{
@@ -14,7 +16,7 @@
   align-content: flex-start;
   background: #fff;
   border-bottom: 1px solid #e5e5e5;
-  padding: 10rpx;
+  padding: 15rpx 10rpx 10rpx;
   margin-bottom: 20rpx;
   min-height: 350rpx;
   overflow: hidden;
@@ -26,7 +28,7 @@
   align-items: center;
   box-sizing: border-box;
   width: 20%;
-  height: 175rpx;
+  height: 170rpx;
 }
 .core-item-icon{
   display: block;
@@ -36,7 +38,7 @@
 }
 .core-item-name{
   display: block;
-  margin: 10rpx;
+  margin: 5rpx;
 }
 /**卡片列表**/
 .main-card-item{
@@ -52,16 +54,24 @@
   overflow: hidden;
 }
 .main-card-item#kb{
-  background-image: url('/images/index/kb-bg.png');
+  /*background-image: url('/images/index/kb-bg.png');*/
+  /*微信暂不支持静态bgimg文件，改用服务器url*/
+  background-image: url('https://we.cqu.pt/app/images/index/kb-bg.png');
 }
 .main-card-item#ykt{
-  background-image: url('/images/index/ykt-bg.png');
+  /*background-image: url('/images/index/ykt-bg.png');*/
+  /*微信暂不支持静态bgimg文件，改用服务器url*/
+  background-image: url('https://we.cqu.pt/app/images/index/ykt-bg.png');
 }
 .main-card-item#jy{
-  background-image: url('/images/index/jy-bg.png');
+  /*background-image: url('/images/index/jy-bg.png');*/
+  /*微信暂不支持静态bgimg文件，改用服务器url*/
+  background-image: url('https://we.cqu.pt/app/images/index/jy-bg.png');
 }
 .main-card-item#sdf{
-  background-image: url('/images/index/sdf-bg.png');
+  /*background-image: url('/images/index/sdf-bg.png');*/
+  /*微信暂不支持静态bgimg文件，改用服务器url*/
+  background-image: url('https://we.cqu.pt/app/images/index/sdf-bg.png');
 }
 .card-item-hd{
   display: flex;
@@ -71,8 +81,8 @@
   margin-left: 30rpx;
 }
 .card-item-icon{
-  width: 35rpx;
-  height: 35rpx;
+  width: 40rpx;
+  height: 40rpx;
   margin-right: 10rpx;
 }
 .card-item-name{
@@ -99,7 +109,6 @@
 .card-info-hd{
   display: flex;
   justify-content: space-between;
-  color: #acacac;
 }
 .card-info-left{
   display: flex;
@@ -107,27 +116,33 @@
 }
 .card-info-right{
   display: flex;
+  color: #acacac;
   flex-direction: column;
 }
 .card-info-name{
-  font-size: 36rpx;
+  font-size: 16pt;
+  line-height: 1.2;
   letter-spacing: 1px;
+  color: #acacac;
 }
 .card-info-number{
-  font-size: 24rpx;
-  line-height: 225%;
+  line-height: 175%;
   text-indent: 1px;
+  color: #aaa;
 }
 .main-ending{
-  display: flex;
+  display: none;
+  /*display: flex;*/
   align-items: center;
+  justify-content: center;
   width: 100%;
   margin-top: 75rpx;
   overflow: hidden;
 }
 .main-ending-text{
+  width: 72pt;
   color: #ccc;
-  font-size: 16rpx;
+  font-size: 8pt;
   padding: 0 16rpx;
   text-align: center;
   white-space: nowrap;
@@ -147,7 +162,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #00c200;
+  color: #7f848a;
   height: 90rpx;
   border-top: 1px solid #ddd;
   margin-top: -1px;
@@ -164,17 +179,16 @@
   flex-direction: column;
 }
 .kb-item-what{
-  font-size: 28rpx;
+  font-size: 12pt;
   line-height: 200%;
   color: #777;
 }
 .kb-item-when{
-  font-size: 16rpx;
   line-height: 125%;
   color: #bbb;
 }
 .kb-item-where{
-  font-size: 32rpx;
+  font-size: 14pt;
   color: #999;
   letter-spacing: 1px;
 }
@@ -184,18 +198,18 @@
   align-items: flex-end;
   justify-content: center;
   font-weight: bold;
-  padding: 20rpx 0;
+  padding: 25rpx 0 30rpx;
 }
 .ykt-balance-text{
-  font-size: 40rpx;
+  font-size: 17pt;
   line-height: 2;
   color: #999;
 }
 .ykt-balance-value{
-  font-size: 120rpx;
+  font-size: 58pt;
   line-height: 1;
   padding: 0 20rpx;
-  color: #ff9b44;
+  color: #ffbf92;
 }
 .ykt-cost{
   display: flex;
@@ -206,18 +220,25 @@
   line-height: 200%;
 }
 .ykt-cost-text{
-  font-size: 22rpx;
+  font-size: 10pt;
   color: #999;
 }
 .ykt-cost-value{
-  font-size: 34rpx;
+  font-size: 12pt;
+  font-weight: normal;
   color: #777;
   padding: 0 10rpx;
 }
 .ykt-cost-total{
-  font-size: 40rpx;
-  color: #ff9b44;
+  font-size: 16pt;
+  color: #ffbf92;
   padding: 0 10rpx;
+}
+.ykt-title{
+  font-size: 10pt;
+}
+.ykt-no-cost{
+  color: #bbb;
 }
 /**借阅信息**/
 .main-card-item#jy .card-item-bd{
@@ -241,15 +262,17 @@
   box-sizing: border-box;
   width: 176rpx;
   height: 231rpx;
-  background-image: url('/images/index/jy-book.png');
+  /*background-image: url('/images/index/jy-book.png');*/
+  /*微信暂不支持静态bgimg文件，改用服务器url*/
+  background-image: url('https://we.cqu.pt/app/images/index/jy-book.png');
   background-size: 100% 100%;
-  padding: 5rpx 7rpx 50rpx 28rpx;
+  padding: 5rpx 5rpx 50rpx 30rpx;
   color: #fff;
   margin-bottom: 10rpx;
 }
 .jy-pickup-time{
   text-align: right;
-  font-size: 16rpx;
+  font-size: 8pt;
   word-wrap: break-word;
   white-space: nowrap;
 }
@@ -269,27 +292,27 @@
   line-height: 200%;
 }
 .jy-timing-value{
-  font-size: 32rpx;
+  font-size: 13pt;
   font-weight: bold;
   color: #729fc3;
   padding: 0 8rpx;
 }
 .jy-timing-text{
-  font-size: 22rpx;
+  font-size: 10pt;
   color: #acacac;
 }
 .jy-return-time-value{
-  font-size: 28rpx;
+  font-size: 12pt;
   color: #7f848a;
 }
 .jy-return-time-text{
-  font-size: 22rpx;
+  font-size: 10pt;
   color: #acacac;
   padding-left: 8rpx;
 }
 /**水电费**/
 .main-card-item#sdf .card-item-bd{
-  padding-bottom: 100rpx;
+  padding-bottom: 80rpx;
 }
 .sdf-hd{
   color: #acacac;
@@ -304,12 +327,12 @@
   padding: 0 10rpx;
 }
 .sdf-value{
-  color: #ff9b44;
-  font-size: 100rpx;
+  color: #ffbf92;
+  font-size: 46pt;
   font-weight: bold;
   padding: 0 15rpx;
 }
 .sdf-text{
   color: #acacac;
-  font-size: 28rpx;
+  font-size: 13pt;
 }

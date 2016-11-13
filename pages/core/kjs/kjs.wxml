@@ -24,23 +24,23 @@
     <!--选择要查询的条件-->
     <view class="main-condition">
         <!--选择周-->
-        <view class="condition-week condition" catchtap="chooseWeek">
+        <scroll-view scroll-x class="condition-week condition" catchtap="chooseWeek">
             <block wx:for="{{DATA.WEEK_DATA}}" wx:key="*this">
                 <block wx:if="{{item !== ''}}">
                     <view class="{{index === conditionSigns.weekSign ? 'condition-li week-active' : 'condition-li'}}" data-weekNo="{{index}}" bindtap="weekTap">{{item}}</view>
                 </block>
             </block>
-        </view>
+        </scroll-view>
         <!--选择天-->
-        <view class="condition-day condition" catchtap="chooseDay">
+        <scroll-view scroll-x class="condition-day condition" catchtap="chooseDay">
             <block wx:for="{{DATA.DAY_DATA}}" wx:key="*this">
                 <block wx:if="{{item !== ''}}">
                     <view class="{{index === conditionSigns.daySign ? 'condition-li day-active' : 'condition-li'}}"  data-dayNo="{{index}}" bindtap="dayTap">{{item}}</view>
                 </block>
             </block>
-        </view>
+        </scroll-view>
         <!--选择课程时间段-->
-        <view class="condition-classTime condition" catchtap="chooseClaasTime">
+        <scroll-view scroll-x class="condition-classTime condition" catchtap="chooseClaasTime">
             <!--<block wx:for="{{DATA.CLASSTIME_DATA}}" wx:key="">
                 <view class="{{item.index === conditionSigns.classTimeSign.a ? 'condition-li classTime-active' : 'condition-li'}}"  data-classNo="{{item.index}}" bindtap="classTimeTap">{{item.time}}</view>
             </block>-->
@@ -50,16 +50,16 @@
             <view class="{{conditionSigns.classTimeSign.time3 ? 'condition-li classTime-active' : 'condition-li'}}"  data-classNo="7@8" bindtap="classTimeTap">7-8</view>
             <view class="{{conditionSigns.classTimeSign.time4 ? 'condition-li classTime-active' : 'condition-li'}}"  data-classNo="9@10" bindtap="classTimeTap">9-10</view>
             <view class="{{conditionSigns.classTimeSign.time5 ? 'condition-li classTime-active' : 'condition-li'}}"  data-classNo="11@12" bindtap="classTimeTap">11-12</view>
-        </view>
+        </scroll-view>
         <!--选择教学楼-->
-        <view class="condition-building condition" catchtap="chooseBuilding">
+        <scroll-view scroll-x class="condition-building condition" catchtap="chooseBuilding">
             <!--<view class="building-active condition-li" data-buildingNo="2" bindtap="buildingTap">二教</view>-->
             <block wx:for="{{DATA.BUILDING_DATA}}" wx:key="*this">
                 <block wx:if="{{item !== ''}}">
                     <view class="{{index === conditionSigns.buildingSign ? 'condition-li building-active' : 'condition-li'}}"  data-buildingNo="{{index}}" bindtap="buildingTap">{{item}}</view>
                 </block>
             </block>
-        </view>
+        </scroll-view>
         <!--查询按钮-->
         <view class="query">
             <button class="query-button" hover-class="none" catchtap="catchQuery">查 询</button>

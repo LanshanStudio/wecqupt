@@ -11,6 +11,7 @@
   </view>
   <!--卡片列表-->
   <view class="main-card">
+  
     <!--今日课表-->
     <view class="main-card-item" id="kb" wx:if="{{card.kb.show}}">
       <navigator url="/pages/core/kb/kb">
@@ -37,8 +38,9 @@
         </view>
       </navigator>
     </view>
+
     <!--一卡通-->
-    <view class="main-card-item" id="ykt" wx:if="{{card.ykt.show}}">
+    <view class="main-card-item" id="ykt" wx-if="{{card.ykt.show}}">
       <navigator url="/pages/core/ykt/ykt">
         <view class="card-item-hd">
           <image class="card-item-icon" src="/images/core/ykt.png" />
@@ -49,23 +51,33 @@
         </view>
       </navigator>
       <view class="card-item-bd">
-        <text>余额：</text>
+        <view class="card-info-hd">
+          <view class="card-info-left">
+            <text class="ykt-title">余额：</text>
+          </view>
+          <view class="card-info-right">
+            <view>截止时间：{{card.ykt.data.last_time}}</view>
+          </view>
+        </view>
         <view class="ykt-balance">
           <text class="ykt-balance-value">{{card.ykt.data.balance}}</text>
           <text class="ykt-balance-text">元</text>
         </view>
-        <text>今日消费：</text>
-        <view class="ykt-cost">
-          <block wx:for="{{card.ykt.data.cost.value}}">
-            <text class="ykt-cost-value">{{item}}</text>
-            <text class="ykt-cost-text" wx:if="{{ index != card.ykt.data.cost.value.length - 1}}">+</text>
-          </block>
-          <text class="ykt-cost-text">=</text>
-          <text class="ykt-cost-total">{{card.ykt.data.cost.total}}</text>
-          <text class="ykt-cost-text">元</text>
-        </view>
+        <block wx:if="{{card.ykt.data.cost_status}}">
+          <text class="ykt-title">今日消费：</text>
+          <view class="ykt-cost">
+            <block wx:for="{{card.ykt.data.today_cost.value}}">
+              <text class="ykt-cost-value">{{item}}</text>
+              <text class="ykt-cost-text" wx:if="{{ index != card.ykt.data.today_cost.value.length - 1}}">+</text>
+            </block>
+            <text class="ykt-cost-text">=</text>
+            <text class="ykt-cost-total">{{card.ykt.data.today_cost.total}}</text>
+            <text class="ykt-cost-text">元</text>
+          </view>
+        </block>
       </view>
     </view>
+    
     <!--借阅信息-->
     <view class="main-card-item" id="jy" wx:if="{{card.jy.show}}">
       <navigator url="/pages/core/jy/jy">
@@ -110,6 +122,7 @@
         </view>
       </view>
     </view>
+
     <!--水电费-->
     <view class="main-card-item" id="sdf" wx:if="{{card.sdf.show}}">
       <navigator url="/pages/core/sdf/sdf">
@@ -124,29 +137,31 @@
       <view class="card-item-bd">
         <view class="card-info-hd">
           <view class="card-info-left">
-            <text class="card-info-name">15栋415</text>
+            <text class="card-info-name">{{card.sdf.data.room}}</text>
           </view>
           <view class="card-info-right">
-            <view>截止时间：16-02-02</view>
+            <view>截止时间：{{card.sdf.data.record_time}}</view>
           </view>
         </view>
         <text class="sdf-hd">本月用电：</text>
         <view class="sdf-bd">
           <view class="sdf-key">
-            <text class="sdf-value">23</text>
+            <text class="sdf-value">{{card.sdf.data.spend}}</text>
             <text class="sdf-text">度</text>
           </view>
           <view class="sdf-key">
-            <text class="sdf-value">66</text>
+            <text class="sdf-value">{{card.sdf.data.cost}}</text>
             <text class="sdf-text">元</text>
           </view>
         </view>
       </view>
     </view>
   </view>
+
   <view class="main-ending">
     <view class="main-ending-line"></view>
-    <text class="main-ending-text">我是一个乖巧的结尾</text>
+    <view class="main-ending-text">我是一个乖巧的结尾</view>
     <view class="main-ending-line"></view>
   </view>
+
 </view>

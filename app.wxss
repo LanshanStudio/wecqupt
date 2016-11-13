@@ -1,14 +1,15 @@
 /**app.wxss**/
 page{
   font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
-  font-size: 22rpx;
+  font-size: 10pt;
   line-height: 150%;
   color: #666;
   height: 100%;
 }
 .container {
+  position: relative;
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 150rpx;
+  padding-bottom: 100rpx;
 } 

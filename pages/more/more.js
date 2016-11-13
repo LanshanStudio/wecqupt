@@ -3,9 +3,12 @@
 var app = getApp();
 Page({
   data: {
-    
+    user: {}
   },
-  onReady: function(){
-
+  onLoad: function(){
+    var _this = this;
+    _this.setData({
+      'user': app._user
+    });
   }
 });

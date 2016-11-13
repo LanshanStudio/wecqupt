@@ -1,0 +1,89 @@
+/**login.wxss**/
+.container {
+  background: #f4f4f4;
+  align-items: stretch;
+  padding: 0;
+}
+.login-hd {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #7acfa6;
+  height: 300rpx;
+}
+.title {
+  /*display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 125rpx;
+  line-height: 100%;
+  height: 125rpx;*/
+  width: 480rpx;
+  height: 120rpx;
+}
+.logo {
+  position: absolute;
+  left: 50%;
+  bottom: -90rpx;
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: -100rpx;
+  border-radius: 100rpx;
+  box-shadow: 0 5rpx 10rpx rgba(0,0,0,.25);
+}
+.login-bd {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.login-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  padding: 25rpx 10rpx;
+  margin: 40rpx 3%;
+  background: #fff;
+  border-radius: 5px;
+  border: 2px solid #f4f4f4;
+  transition: all .25s ease-in-out;
+}
+.input-group.active {
+  border: 2px solid #7acfa6;
+}
+.input-label {
+  color: #888;
+  font-size: 13pt;
+  height: 25rpx;
+  line-height: 25rpx;
+  padding: 0 25rpx;
+  border-right: 1px solid #d8d8d8; 
+}
+.input-group input {
+  flex: 1;
+  font-size: 13pt;
+  height: 25rpx;
+  line-height: 25rpx;
+  padding: 0 25rpx;
+}
+.input-placeholder {
+  color: #ccc;
+}
+.confirm-btn {
+  font-size: 13pt;
+  line-height: 85rpx;
+  height: 85rpx;
+  background: #7acfa6;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  margin: 30rpx 3%;
+}

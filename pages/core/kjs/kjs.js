@@ -3,9 +3,11 @@
 var app = getApp();
 
 // 定义常量数据
-var WEEK_DATA = ['', '第一周', '第二周', '第三周', '第四周', '第五周', '第六周', '第七周', '第八周', '第九周', '第十周', '第十一周', '第十二周', '第十三周', '第十四周', '第十五周', '第十六周', '第十七周', '第十八周', '第十九周', '第二十周'],
+var WEEK_DATA = ['', '第一周', '第二周', '第三周', '第四周', '第五周', '第六周', '第七周', '第八周', '第九周', '第十周',
+                    '十一周', '十二周', '十三周', '十四周', '十五周', '十六周', '十七周', '十八周', '十九周', '二十周'],
     DAY_DATA = ['', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
-    CLASSTIME_DATA = [{time: '1-2', index: '1@2'}, {time: '3-4', index: '3@4'},  {time: '5-6', index: '5@6'}, {time: '7-8', index: '7@8'}, {time: '9-10', index: '9@10'}, {time: '11-12', index: '11@12'}],
+    CLASSTIME_DATA = [{time: '1-2', index: '1@2'}, {time: '3-4', index: '3@4'}, {time: '5-6', index: '5@6'},
+                      {time: '7-8', index: '7@8'}, {time: '9-10', index: '9@10'}, {time: '11-12', index: '11@12'}],
     BUILDING_DATA = ['', '', '二教', '三教', '四教', '五教', '', '', '八教', '其他'];
 
 
@@ -45,11 +47,8 @@ function sendRequest(requestData){
 
   // 发送请求
   wx.request({
-    url: 'http://we.cqupt.edu.cn/api/get_empty_room.php', 
+    url: app._server + '/api/get_empty_room.php', 
     data: requestData,
-    header: {
-        'Content-Type': 'application/json'
-    },
     success: function(res) {
       doSuccess(res.data.data);
     },

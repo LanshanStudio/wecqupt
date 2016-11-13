@@ -1,4 +1,52 @@
 <!--more.wxml-->
 <view class="container">
-  
+
+  <view class="user-info">
+    <view class="info-hd">
+      <image class="user-avatar" src="{{user.wx.avatarUrl}}" />
+      <view class="user-title">
+        <text class="user-name">{{user.xs.name}}</text>
+        <text class="user-id">{{user.xs.xh}}</text>
+      </view>
+    </view>
+    <view class="info-bd">
+      <view class="info-bd-left">
+        <text class="user-text">性别：男</text>
+        <text class="user-text">年级：2013级</text>
+        <text class="user-text">班级：0411302班</text>
+      </view>
+      <view class="info-bd-right">
+        <text class="user-text">统一识别码：1634355</text>
+        <text class="user-text">学院：计算机科学与技术学院</text>
+        <text class="user-text">专业：计算机科学与技术</text>
+        <text class="user-text"></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="more-list">
+    <navigator url="#" class="issue-link">
+      <view class="issue-btn">
+        <image class="btn-icon" src="/images/more/issue.png" />
+        <text>反馈</text>
+        <view class="btn-open">
+          <image class="btn-enter" src="/images/more/enter.png" />
+        </view>
+      </view>
+    </navigator>
+    <navigator url="/pages/more/about" class="about-link">
+      <view class="issue-btn">
+        <image class="btn-icon" src="/images/more/about.png" />
+        <text>关于</text>
+        <view class="btn-open">
+            <image class="btn-enter" src="/images/more/enter.png" />
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+  <navigator url="/pages/more/login" class="login-btn">
+    <text>切换绑定</text>
+  </navigator>
+
 </view>
