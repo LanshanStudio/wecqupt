@@ -16,9 +16,7 @@
       <text wx:if="{{author}}">作者：{{author}}</text>
       <text wx:if="{{reading}}">阅读量：{{reading}}</text>
     </view>
-    <view class="detail">
-      <text>{{content}}</text>
-    </view>
+    <text class="detail">{{content}}</text>
     <swiper class="files_list" wx:if="{{files_len}}" indicator-dots="{{files_len !== 1}}" autoplay="{{!file_loading}}">
       <swiper-item wx:for="{{files_list}}" wx:key="fjid">
         <view class="file">

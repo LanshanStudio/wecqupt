@@ -10,7 +10,8 @@
         <view class="input-group">
             <text class="input-label">寝室楼栋</text>
             <picker class="{{!ibuilding?'placeholder':''}}" bindchange="buildingPicker" value="{{ibuilding}}" range="{{buildings}}">
-                {{buildings[ibuilding]}}
+                <text wx:if="{{ibuilding === false}}">请选择寝室楼栋</text>
+                <text wx:else>{{buildings[ibuilding]}}</text>
             </picker>
         </view>
         <view class="input-group {{room_focus ? 'active' : ''}}">

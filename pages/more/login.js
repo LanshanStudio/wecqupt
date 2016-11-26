@@ -35,9 +35,7 @@ Page({
             duration: 2000
           });
           app.getUser();
-          wx.redirectTo({
-            url: '/pages/index/index'
-          });
+          wx.navigateBack();
         }else{
           app.showErrorModal(res.data.message);
         }

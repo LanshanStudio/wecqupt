@@ -21,6 +21,8 @@
     font-size: 11pt;
     line-height: 150%;
     padding: 50rpx 15rpx 180rpx;
+    word-break: break-all;
+    text-align: justify;
 }
 .files_list {
     position: fixed;

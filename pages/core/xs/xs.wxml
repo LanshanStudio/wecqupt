@@ -41,7 +41,7 @@
           </view>
           <!--信息直接显示部分的下拉标识-->
           <view class="list-sign">
-            <image class="list-sign-icon {{!item.display ? 'list-sign-icon-show' : ''}}" src="/images/core/common/down.png"></image>
+            <image class="list-sign-icon {{!item.display ? 'list-sign-icon-show' : ''}}" src="/images/core/common/up.png"></image>
           </view>
         </view>
         <!--信息隐藏的下拉列表-->

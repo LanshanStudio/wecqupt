@@ -59,15 +59,36 @@ Page({
           'cost': 0,
           'spend': 0
         }
-      },
-      'user': {}
-    }
+      }
+    },
+    user: {}
   },
   //下拉更新
   onPullDownRefresh: function(){
-    var _this = this;
     if(app._user.is_bind){
       this.getCardData();
+    }
+  },
+  onShow: function(){
+    var _this = this;
+    function isEmptyObject(obj){ for(var key in obj){return false;} return true; }
+    function isEqualObject(obj1, obj2){ if(JSON.stringify(obj1) != JSON.stringify(obj2)){return false;} return true; }
+    var l_user = this.data.user,  //本页用户数据
+        g_user = app._user; //全局用户数据
+    //排除第一次加载页面的情况（本页用户数据为空 或 本页用户数据与全局用户数据相等）
+    if(isEmptyObject(l_user) || isEqualObject(l_user, g_user)){
+      return false;
+    }
+    //全局用户数据和本页用户数据不一致时，重新获取卡片数据
+    if(!isEqualObject(l_user, g_user)){
+      //判断绑定状态
+      if(!g_user.is_bind){
+        _this.setData({
+          'remind': '未绑定'
+        });
+      }else{
+        _this.getCardData();
+      }
     }
   },
   onLoad: function(){
@@ -113,7 +134,7 @@ Page({
             for(var j = 0; j < lessons[i].length; j++){
               var lesson = lessons[i][j];
               if(lesson.weeks && lesson.weeks.indexOf(parseInt(info.week)) !== -1){
-                var begin_lesson = i + 1, end_lesson = i+lesson.number;
+                var begin_lesson = 2*i+1, end_lesson = 2*i+lesson.number;
                 list.push({
                   when: begin_lesson+' - '+end_lesson+'节'
                         +'（'+time_list[begin_lesson-1].begin+'~'+time_list[end_lesson-1].end+'）',
