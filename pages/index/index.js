@@ -73,10 +73,10 @@ Page({
     var _this = this;
     function isEmptyObject(obj){ for(var key in obj){return false;} return true; }
     function isEqualObject(obj1, obj2){ if(JSON.stringify(obj1) != JSON.stringify(obj2)){return false;} return true; }
-    var l_user = this.data.user,  //本页用户数据
+    var l_user = _this.data.user,  //本页用户数据
         g_user = app._user; //全局用户数据
-    //排除第一次加载页面的情况（本页用户数据为空 或 本页用户数据与全局用户数据相等）
-    if(isEmptyObject(l_user) || isEqualObject(l_user, g_user)){
+    //排除第一次加载页面的情况（全局用户数据未加载完整 或 本页用户数据与全局用户数据相等）
+    if(!g_user.openid || isEqualObject(l_user, g_user)){
       return false;
     }
     //全局用户数据和本页用户数据不一致时，重新获取卡片数据
@@ -234,6 +234,13 @@ Page({
         if(res.data.status === 200){
           var info = res.data.data;
           if(parseInt(info.books_num) || (info.book_list && info.book_list.length)){
+            var nowTime = new Date().getTime();
+            info.book_list.map(function(e){
+              var oDate = e.yhrq.split('-'),
+                  oTime = new Date(oDate[0], oDate[1]-1, oDate[2]).getTime();
+              e.timing = parseInt((oTime - nowTime) / 1000 / 60 / 60 /24);
+              return e;
+            });
             _this.setData({
               'card.jy.data': info,
               'card.jy.show': true,

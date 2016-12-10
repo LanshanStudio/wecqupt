@@ -24,8 +24,8 @@ Page({
       url: app._server + '/api/users/bind.php',
       data: app.key({
         openid: app._user.openid,
-        xh: _this.data.userid,
-        sfzh: _this.data.passwd
+        yktid: _this.data.userid,
+        passwd: _this.data.passwd
       }),
       success: function(res){
         if(res.data.status === 200){
@@ -68,6 +68,9 @@ Page({
     this.setData({
       userid: e.detail.value
     });
+    if(e.detail.value.length >= 7){
+      wx.hideKeyboard();
+    }
   },
   passwdInput: function(e) {
     this.setData({

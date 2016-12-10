@@ -14,9 +14,11 @@
                     <text class="repair-detail-name">服务类型</text>
                     <view class="repair-detail-item-ft">
                         <picker class="repair-detail-picker" bindchange="listenerServiceType" value="{{serviceTypeValue}}" range="{{serviceTypeRange}}">  
-                            <text wx:if="{{serviceTypeValue === false}}" class="repair-detail-info">请选择服务类型</text>
-                            <text wx:else class="repair-detail-info">{{serviceTypeRange[serviceTypeValue]}}</text>
-                            <image class="more-icon" src="/images/more/enter.png"></image>
+                            <view class="repair-detail-content">
+                                <text wx:if="{{serviceTypeValue === false}}" class="repair-detail-info">请选择服务类型</text>
+                                <text wx:else class="repair-detail-info">{{serviceTypeRange[serviceTypeValue]}}</text>
+                                <image class="more-icon" src="/images/more/enter.png"></image>
+                            </view>
                         </picker>
                     </view>
                 </view>
@@ -26,9 +28,11 @@
                     <text class="repair-detail-name">服务项目</text>
                     <view class="repair-detail-item-ft">
                         <picker class="repair-detail-picker" bindchange="listenerServiceObject" value="{{serviceObjectValue}}" range="{{serviceObjectRange}}">  
-                            <text wx:if="{{serviceObjectValue === false}}" class="repair-detail-info">请选择服务项目</text>
-                            <text wx:else class="repair-detail-info">{{serviceObjectRange[serviceObjectValue]}}</text>   
-                            <image class="more-icon" src="/images/more/enter.png"></image>
+                            <view class="repair-detail-content">
+                                <text wx:if="{{serviceObjectValue === false}}" class="repair-detail-info">请选择服务项目</text>
+                                <text wx:else class="repair-detail-info">{{serviceObjectRange[serviceObjectValue]}}</text>   
+                                <image class="more-icon" src="/images/more/enter.png"></image>
+                            </view>
                         </picker>
                     </view>
                 </view>
@@ -38,9 +42,11 @@
                     <text class="repair-detail-name">服务区域</text>
                     <view class="repair-detail-item-ft">
                         <picker class="repair-detail-picker" bindchange="listenerServiceArea" value="{{serviceAreaValue}}" range="{{serviceAreaRange}}">  
-                            <text wx:if="{{serviceAreaValue === false}}" class="repair-detail-info">请选择服务区域</text>
-                            <text wx:else class="repair-detail-info">{{serviceAreaRange[serviceAreaValue]}}</text>   
-                            <image class="more-icon" src="/images/more/enter.png"></image>
+                            <view class="repair-detail-content">
+                                <text wx:if="{{serviceAreaValue === false}}" class="repair-detail-info">请选择服务区域</text>
+                                <text wx:else class="repair-detail-info">{{serviceAreaRange[serviceAreaValue]}}</text>   
+                                <image class="more-icon" src="/images/more/enter.png"></image>
+                            </view>
                         </picker>
                     </view>
                 </view>

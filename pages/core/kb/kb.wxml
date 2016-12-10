@@ -14,7 +14,7 @@
             <!-- 左边课数，34节和78节marginBottom为12rpx，其他均为8rpx，课程卡片与这相同 -->
             <view class="kb-num-ctn blur-area {{blur?'blur':''}}">
                 <view class="kb-mon kb-date">
-                    <block wx:if="{{week != '*'}}"><text>{{dates[week][0].month}}</text><text>月</text></block>
+                    <block wx:if="{{week != '*'}}"><text>{{dates[week-1][0].month}}</text><text>月</text></block>
                 </view>
                 <view class="mg-t">1</view>
                 <view class="mg-8">2</view>
@@ -34,7 +34,7 @@
                 <!-- 头部星期数 -->
                 <view class="kb-title blur-area {{blur?'blur':''}}">
                     <block wx:if="{{week != '*'}}">
-                        <view wx:for="{{dates[week]}}" wx:key="date" class="kb-title-item">
+                        <view wx:for="{{dates[week-1]}}" wx:key="date" class="kb-title-item">
                             <text class="kb-date">{{item.date === 1 ? item.month+'月' : item.date}}</text>
                             <text>周{{_days[index]}}</text>
                         </view>
@@ -131,7 +131,7 @@
                     <block>
                         <text wx:if="{{week != '*'}}" class="kb-info-week">{{toweek}}周周{{_days[targetDay]}}</text>
                         <text wx:else class="kb-info-week">星期{{_days[targetDay]}}</text>
-                        <text class="kb-lesson-time">{{targetWid*2+1}}-{{targetWid*2+2}}节</text>
+                        <text class="kb-lesson-time">{{targetWid*2+1}}-{{targetWid*2+targetLessons[targetI].number}}节</text>
                         <image class="kb-info-card-close" src="/images/core/common/down_w.png" bindtap="hideDetail"></image>
                     </block>
                 </view>
@@ -155,7 +155,7 @@
                                         <text class="info-item-value">{{item.place}}</text>（上课地点）
                                     </view>
                                     <view class="info-item">
-                                        <text class="info-item-value">{{item.all_week}}{{item.number===3?' / 三节连上':''}}</text>（课程周数）
+                                        <text class="info-item-value">{{item.all_week}}</text>（课程周数）
                                     </view>
                                     <view class="info-item">
                                         <text class="info-item-value">{{item.class_id}}</text>（班级编号）

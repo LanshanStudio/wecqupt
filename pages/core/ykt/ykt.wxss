@@ -80,11 +80,36 @@
     color: #999;
     margin-bottom: 25rpx;
 }
+
+/* 余额、消费切换按钮 */
+.balance-consumption {
+    display: flex;
+    width: 40%;
+    margin: 0 50rpx 25rpx;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 5rpx 5rpx 15rpx #ccc;
+}
+.balance-consumption text {
+    flex-grow: 1;
+    line-height: 200%;
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: center;
+    background: #fff;
+}
+.balance-consumption .current-btn {
+    color: #fff;
+    background: #ffcb63;
+}
+
+/* 网格 */
 .grid-wraper {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-top: 50rpx;
     width: 100%;
     height: 300px;
 }
@@ -92,6 +117,8 @@
     width: 100%;
     height: 100%;
 }
+
+/* 详情竖线 */
 .line {
     position: absolute;
     z-index: 999;
@@ -99,6 +126,18 @@
     height: 265px;
     width: 2px;
     background: #ffcb63;
+}
+
+/* 纵坐标的含义 */
+.y-text {
+    position: absolute;
+    left: 20rpx;
+    top: -50rpx;
+    padding: 0 10rpx;
+    background: #fff;
+    border-radius: 15rpx;
+    font-size: 24rpx;
+    color: #777;
 }
 
 /* 详情盒子 */

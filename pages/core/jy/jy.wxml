@@ -16,7 +16,7 @@
                     <text class="user-jy-text">本</text>
                 </view>
             </view>
-            <view class="user-jy-item user-jy-history">
+            <view class="user-jy-item user-jy-history" bindtap="jyHistory">
                 <text class="user-jy-hd">历史借阅</text>
                 <view class="user-jy-bd">
                     <text class="user-jy-value">{{jyData.history}}</text>
@@ -49,6 +49,9 @@
                     <image class="book-img" src="/images/core/jy.png"></image>
                 </view>
             </block>
+        </view>
+        <view class="fix_tip {{jyHistoryTap?'active':''}}">
+            <text>暂不能查看历史借阅详情哦~</text>
         </view>
     </block>
 </view>

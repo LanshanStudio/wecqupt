@@ -120,14 +120,15 @@
               </view>
               <text class="jy-book-name">{{item.book}}</text>
             </view>
-            <view class="jy-timing">
-              <text class="jy-timing-text">已借</text>
-              <text class="jy-timing-value">0</text>
-              <text class="jy-timing-text">天</text>
-            </view>
             <view class="jy-return-time">
               <text class="jy-return-time-value">{{item.yhrq}}</text>
               <text class="jy-return-time-text">还</text>
+            </view>
+            <view class="jy-timing">
+              <text class="jy-timing-text" wx:if="{{item.timing>=0}}">还有</text>
+              <text class="jy-timing-text" wx:else>已超过</text>
+              <text class="jy-timing-value">{{item.timing>=0?item.timing:-item.timing}}</text>
+              <text class="jy-timing-text">天</text>
             </view>
           </view>
         </view>
@@ -154,7 +155,7 @@
             <view>截至时间：{{card.sdf.data.record_time}}</view>
           </view>
         </view>
-        <text class="sdf-hd">本月用电：</text>
+        <text class="sdf-hd">当月用电：</text>
         <view class="sdf-bd">
           <view class="sdf-key">
             <text class="sdf-value">{{card.sdf.data.spend}}</text>

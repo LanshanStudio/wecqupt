@@ -145,7 +145,7 @@
 
 .kb-bg{
     position: absolute;
-    width: 100%;
+    width: 120rpx;
     top: -8rpx;
     bottom: -12rpx;
     background: -webkit-gradient(linear, left top, left bottom, from(#eff7ff), color-stop(0.5, #8cc4ff), to(#eff7ff));
@@ -158,7 +158,7 @@
     right: 0;
     top: 50%;
     margin-top: -2rpx;
-    width: 100%;
+    width: 120rpx;
     height: 5rpx;
     background: #0069d9;
     z-index: 99;
@@ -265,7 +265,7 @@
     right: 0;
     left: 0;
     width: 965rpx;
-    background: rgba(166,166,166,.3);
+    background: rgba(166,166,166,.45);
     transition: .3s;
 }
 .kb-detail-card-content{

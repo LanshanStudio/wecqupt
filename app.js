@@ -86,7 +86,6 @@ App({
     wx.removeStorage({ key: 'cache' });
     _this._user.xs.build = data.build || '';
     _this._user.xs.room = data.room || '';
-    _this._user.xs.sfzh = !!data.sfzh;
   },
   showErrorModal: function(content, title){
     wx.showModal({

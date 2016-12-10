@@ -25,7 +25,7 @@ Page({
     wx.request({
       url: app._server + "/api/get_jzsf.php",
       data: {
-        yktID: app._user.xs.ykth
+        xh: app._user.xs.xh
       },
       success: function(res) {
 

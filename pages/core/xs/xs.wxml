@@ -7,7 +7,15 @@
     <view class="header-search">
       <!--搜索框-->
       <view class="{{header.searchChange ? 'search-input' : 'search-input js-fous-input'}}">
-        <input class="input-text" value="{{header.inputValue}}" bindfocus="bindSearchFocus" bindblur="bindSearchBlur" bindinput="bindSearchInput" type="text" name="search" />
+        <view class="search-icon-box" hidden="{{header.searchChange}}">
+          <image class="search-icon" src="/images/core/xs/search-sign.png"></image>
+        </view>
+        <form class="input-form" bindsubmit="bindConfirmSearchTap">
+          <input class="input-text" value="{{header.inputValue}}" bindfocus="bindSearchFocus" bindblur="bindSearchBlur" bindinput="bindSearchInput" type="text" name="search" />
+        </form>
+        <view class="input-clear-button" bindtap="bindClearSearchTap" hidden="{{header.searchChange}}">
+          <image class="clear-icon" src="/images/core/xs/clear.png"></image>
+        </view>
         <view class="input-confirm-button" bindtap="bindConfirmSearchTap" hidden="{{header.searchChange}}">
           <text>搜索</text>
         </view>

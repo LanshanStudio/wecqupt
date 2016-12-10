@@ -2,6 +2,7 @@
 
 .container {
 
+    background-attachment: scroll;
     /*background: #f7f7f7 url('/images/core/xs/bg.png') no-repeat;*/
     /*微信暂不支持静态bgimg文件，改用服务器url*/
     background: #f7f7f7 url('https://we.cqu.pt/app/images/core/xs/bg.png') no-repeat;
@@ -40,28 +41,54 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 85rpx;
 }
-    .js-fous-input {
-        /*background: url('/images/core/xs/search-sign.png') no-repeat;*/
-        /*微信暂不支持静态bgimg文件，改用服务器url*/
-        background: url('https://we.cqu.pt/app/images/core/xs/search-sign.png') no-repeat;
-        background-size: 30rpx 30rpx;
-        background-position: 25rpx 50%;
-
+    .js-fous-input .search-icon-box{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20rpx;
+        height: 85rpx;
+    }
+    .input-form {
+        flex: 1;
+        display: flex;
+        position: relative;
+        height: 85rpx;
     }
     .input-text {
         
         flex: 1;
-        padding: 0 75rpx;
+        position: absolute;
+        left: 0;
+        right: 0;
         font-size: 11pt;
+        box-sizing: border-box;
+        width: 100%;
         height: 85rpx;
         line-height: 85rpx;
+        padding-left: 70rpx;
+    }
+    .input-clear-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20rpx;
+        height: 85rpx;
+        opacity: .95;
+    }
+    .input-clear-button .clear-icon{
+        width: 30rpx;
+        height: 30rpx;
     }
     .input-confirm-button {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 20rpx;
+        padding: 0 20rpx 0 10rpx;
         height: 85rpx;
         opacity: .95;
     }

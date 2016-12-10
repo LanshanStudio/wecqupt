@@ -25,7 +25,7 @@ page {
     .roomUl-floor {
 
         display: flex;
-        flex: 0 0 auto;
+        width: 600rpx;
         flex-flow: column nowrap;
         margin-top: 20rpx;
         padding: 0 0 0 65rpx;
@@ -37,15 +37,15 @@ page {
     }
         .floor {
 
+            flex: 1;
+            width: 600rpx;
             display: flex;
-            flex: 0 0 auto;
-            flex-flow: row wrap;
+            flex-wrap: wrap;
         }
             .floor text {
                 
-                flex: 0 0 auto;
                 padding-bottom: 25rpx;
-                min-width: 20%;
+                width: 120rpx;
                 font-size: 11pt;
                 letter-spacing: 0.1rem;
                 text-align: center;

@@ -18,10 +18,6 @@
             <text class="input-label">寝室号</text>
             <input type="number" value="{{room}}" id="room" maxlength="3" placeholder="请输入寝室号（三位）" bindinput="roomInput" bindfocus="inputFocus" bindblur="inputBlur" />
         </view>
-        <view class="input-group {{sfz_focus ? 'active' : ''}}">
-            <text class="input-label">身份证后6位</text>
-            <input type="number" value="{{sfz}}" id="sfz" password="true" maxlength="6" placeholder="请输入身份证后6位" bindinput="sfzInput" bindfocus="inputFocus" bindblur="inputBlur" />
-        </view>
     </form>
     <view class="confirm-btn" bindtap="confirm">
         <text>保存</text>

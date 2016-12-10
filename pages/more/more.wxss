@@ -110,5 +110,5 @@
   color: #fff;
   text-align: center;
   border-radius: 5px;
-  margin: 30rpx 3%;
+  margin: 40rpx 3%;
 }

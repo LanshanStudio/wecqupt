@@ -10,7 +10,8 @@ Page({
       history: 0,     //历史借阅量
       dbet: 0,        //欠费
       nothing: true   //当前是否有借阅
-    }
+    },
+    jyHistoryTap: false //点击历史借阅
   },
   onLoad: function() {
     this.getData();
@@ -56,6 +57,19 @@ Page({
         wx.stopPullDownRefresh();
       }
     });
+  },
+  jyHistory: function(){
+    var _this = this;
+    if(!_this.data.jyHistoryTap){
+      _this.setData({
+        jyHistoryTap: true
+      });
+      setTimeout(function(){
+        _this.setData({
+          jyHistoryTap: false
+        });
+      }, 2000);
+    }
   }
  
 });

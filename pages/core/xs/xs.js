@@ -36,6 +36,13 @@ Page({
       });
     }
   },
+  bindClearSearchTap: function (e) {
+    this.setData({
+      'main.mainDisplay': true,
+      'header.inputValue': '',
+      'header.searchChange': false
+    });
+  },
 
   bindSearchInput: function(e) {
     this.setData({

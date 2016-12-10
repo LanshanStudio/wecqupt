@@ -36,6 +36,13 @@
     align-items: center;
     justify-content: flex-end;
 }
+.repair-detail-content{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20rpx 0;
+}
 .repair-detail-info {
     flex: 1;
 }
@@ -91,7 +98,11 @@
     padding-left: 45rpx;
 }
 .reporter-detail-input input{
+    font-size: 10pt;
     width: 100%;
+}
+.input-placeholder {
+    font-size: 10pt;
 }
 .declare-context{
     display: flex;

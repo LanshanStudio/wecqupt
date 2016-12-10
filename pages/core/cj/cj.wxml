@@ -5,7 +5,6 @@
         <block wx:else>
           <image class="remind-img" src="/images/index/nothing.png"></image>
           <text class="remind-text">{{remind}}</text>
-          <navigator redirect="true" wx:if="{{remind == '未完善身份信息' || remind == '身份证号错误或未完善'}}" url="/pages/more/append" class="remind-btn">前往完善</navigator>
         </block>
     </view>
     <block wx:else>

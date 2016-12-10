@@ -95,3 +95,25 @@
     width: 200rpx;
     opacity: 0.25;
 }
+.fix_tip{
+    position: fixed;
+    bottom: 50rpx;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translate3d(0, 80rpx, 0);
+    transition: all .5s cubic-bezier(0.19, 1, 0.22, 1)
+}
+.fix_tip.active{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+.fix_tip text{
+    font-size: 9pt;
+    line-height: 100%;
+    padding: 10rpx 20rpx;
+    border-radius: 10rpx;
+    background: rgba(66,66,66,.5);
+    color: #fff;
+}

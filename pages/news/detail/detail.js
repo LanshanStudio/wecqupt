@@ -59,7 +59,7 @@ module.exports.ipage = {
             content: _this.convertHtmlToText(info.body),  // 新闻内容
             source: _this.data.sources[options.type],
             remind: ''
-          })
+          });
 
           // 如果存在附件则提取附件里面的信息
           if(info.fjlist && info.fjlist.length){
@@ -91,40 +91,63 @@ module.exports.ipage = {
 
   getFj: function(e){
     var _this = this;
-    _this.setData({
-      file_loading: true
-    });
-    wx.downloadFile({
-      url: e.currentTarget.dataset.url,
+    wx.showModal({
+      title: '提示',
+      content: '预览或下载附件需要消耗流量，是否继续？',
+      confirmText: '继续',
       success: function(res) {
-        var filePath = res.tempFilePath;
-        if(e.currentTarget.dataset.preview === true || 'true'){
-          wx.openDocument({
-            filePath: filePath,
-            success: function (res) {
+        if (res.confirm) {
+          app.showLoadToast('下载中，请稍候...');
+          wx.showNavigationBarLoading();
+          _this.setData({
+            file_loading: true
+          });
+          //下载
+          wx.downloadFile({
+            url: e.currentTarget.dataset.url,
+            success: function(res) {
+              var filePath = res.tempFilePath;
+              if(e.currentTarget.dataset.preview == 'true'){
+                //预览
+                wx.openDocument({
+                  filePath: filePath,
+                  success: function (res) {
+                    _this.setData({
+                      file_loading: false
+                    });
+                  },
+                  fail: function (res) {
+                    app.showErrorModal(res.errMsg, '预览失败');
+                    // 等待微信提供能将文件保存至本地的api
+                    // _this.saveFj(filePath);
+                  },
+                  complete: function(){
+                    wx.hideNavigationBarLoading();
+                    wx.hideToast();
+                  }
+                });
+              }else{
+                //保存
+                _this.saveFj(filePath);
+              }
+            },
+            file: function(res){
               _this.setData({
                 file_loading: false
               });
-            },
-            fail: function (res) {
-              _this.saveFj(filePath);
+              app.showErrorModal(res.errMsg, '下载失败');
             }
           });
-        }else{
-          _this.saveFj(filePath);
         }
-      },
-      file: function(res){
-        _this.setData({
-          file_loading: false
-        });
-        app.showErrorModal(res.errMsg, '下载失败');
       }
     });
   },
 
   saveFj: function(path){
     var _this = this;
+    // 等待微信提供能将文件保存至本地的api
+    app.showErrorModal('暂不支持下载', '下载失败');
+    return;
     wx.saveFile({
       tempFilePath: path,
       success: function(res) {
@@ -135,6 +158,8 @@ module.exports.ipage = {
         app.showErrorModal(res.errMsg, '下载失败');
       },
       complete: function () {
+        wx.hideNavigationBarLoading();
+        wx.hideToast();
         _this.setData({
           file_loading: false
         });
