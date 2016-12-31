@@ -1,0 +1,40 @@
+<view class="container home">
+   <view wx:if="{{remind}}" class="remind-box">
+        <image wx:if="{{remind == '加载中'}}" class="remind-img" src="/images/index/loading.gif"></image>
+        <block wx:else>
+          <image class="remind-img" src="/images/index/nothing.png"></image>
+          <text class="remind-text">{{remind}}</text>
+        </block>
+    </view>
+    <block wx:else>
+       <!-- 查询结果  -->
+        <view class="result" wx:if="{{result}}">
+          <view class="resultTitle">查询结果</view>
+          <view class="baseinf">
+            <view class="examName">{{result.examName}}</view>
+            <view class="name">{{'姓名：' + result.name}}</view>
+             <view class="school">{{'学校：' + result.school}}</view>
+            <view class="time">{{'考试时间：' + result.time}}</view>
+            <view class="idCard">{{'准考证号：' + result.idCard}}</view>
+          
+          </view>
+          <view class="score">
+              <view class="total">{{'总分：' + result.total}}</view>
+              <view class="scoreList">
+                <view class="listen list">
+                  <view class="left">听力</view>
+                  <view class="right">{{result.listen}}</view>
+                </view>
+                <view class="read list">
+                  <view class="left">阅读</view>
+                  <view class="right">{{result.read}}</view>
+                </view>
+                <view class="write list">
+                  <view class="left">写作和翻译</view>
+                  <view class="right">{{result.write}}</view>
+                </view>
+              </view>
+          </view>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,132 @@
+.container{
+  background: #f7f7f7;
+}
+
+/* 顶部导航  */
+
+.navTab{
+  display: flex;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+  margin-bottom: 35rpx;
+  background: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+/* .navTab view{
+  flex: 1;
+  text-align: center;
+  color: #999;
+  font-size: 26rpx;
+  font-weight: bold;
+} */
+.navTab view{
+  flex: 1;
+  text-align: center;
+  color: white;
+  background: #D2D3D5;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.navTab .selected{
+  background: #73b4ef;
+  color: white;
+}
+
+/* 表单  */
+
+
+.input-label {
+  height: 20rpx;
+  line-height: 20rpx;
+  padding: 0 20rpx;
+  color: #888;
+  border-right: 1px solid #d8d8d8;
+  min-width: 80rpx;
+  text-align: justify;
+
+}
+.input-group input {
+  padding: 0 20rpx;
+  flex: 1;
+  min-height: 52rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  padding: 25rpx 10rpx;
+  margin:0 60rpx;
+  background: #fff;
+  border-radius: 5px;
+  border: 2px solid #f4f4f4;
+
+}
+.input-group.active {
+  border: 2px solid #73b4ef;
+}
+
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+
+.btn{
+  margin: auto;
+  background:#73b4ef;
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: white;
+  text-align: center;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.warn{
+  color: red;
+  margin-left: 80rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+/*  查询结果  */
+
+.result{
+  margin-left: 70rpx;
+  margin-right: 70rpx;
+  margin-top: 50rpx;
+
+}
+.result .examName{
+    font-size: 32rpx;
+    margin-bottom: 20rpx;
+}
+.result .name,
+.result .idCard{
+  color: #999;
+}
+.result .score{
+  margin-top: 30rpx;
+  background: #F2F2F2;
+  padding:25rpx; 
+}
+.result .score{
+  color: #999;
+}
+.result .score .total{
+  font-size: 33rpx;
+  color: #333;
+}
+.result .score .scoreList{
+  margin-left: 50rpx;
+  margin-top: 20rpx;
+}

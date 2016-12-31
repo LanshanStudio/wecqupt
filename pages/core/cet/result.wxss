@@ -1,0 +1,58 @@
+.container{
+  background: #f7f7f7;
+}
+
+/*  查询结果  */
+
+.result{
+  margin-left: 70rpx;
+  margin-right: 70rpx;
+  margin-top: 70rpx;
+}
+.result .baseinf{
+  margin-top: 30rpx;
+}
+.result .examName{
+    font-size: 32rpx;
+    margin-bottom: 20rpx;
+}
+.result .school,
+.result .name,
+.result .time,
+.result .idCard{
+  color: #999;
+  font-size: 26rpx;
+}
+.result .score{
+  margin-top: 50rpx;
+  background: #F2F2F2;
+  padding:25rpx; 
+
+}
+.result .score{
+  color: #999;
+  background: #fff;
+}
+.result .score .total{
+  font-size: 33rpx;
+  color: #333;
+}
+.result .score .scoreList{
+  margin-top: 20rpx;
+}
+.result .list{
+  overflow: hidden;
+  padding: 15rpx;
+   border-top: 1px solid #eee;
+}
+.result .list .left{
+  float: left;
+}
+.result .list .right{
+  float: right;
+}
+.resultTitle{
+    font-size: 20pt;
+    font-weight: bold;
+    color: #222;
+}

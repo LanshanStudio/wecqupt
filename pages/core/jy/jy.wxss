@@ -1,0 +1,89 @@
+/**jy.wxss**/
+.container {
+    background-color: #f7f7f7;
+}
+.user-jy {
+    display: flex;
+    background: #fefefe;
+    border-bottom: 1rpx solid #eee;
+}
+.user-jy-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 11pt;
+    line-height: 150%;
+    height: 150rpx;
+    padding: 20rpx;
+    border-right: 1rpx solid #eee;
+}
+.user-jy-dbet {
+    border: none;
+}
+.user-jy-hd {
+    color: #777;
+}
+.user-jy-bd {
+    display: flex;
+    justify-content: center;
+}
+.user-jy-value {
+    font-size: 28pt;
+    color: #73b4ef;
+    font-weight: bold;
+    line-height: 150%;
+    padding: 0 20rpx 0 30rpx;
+}
+.user-jy-text {
+    color: #999;
+    font-size: 10pt;
+    line-height: 200%;
+    align-self: flex-end;
+}
+.book-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 25rpx 30rpx;
+}
+.current-type {
+    color: #777;
+    font-size: 10pt;
+    line-height: 200%;
+    margin-bottom: 15rpx;
+}
+.book-wraper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 35rpx 30rpx 10rpx;
+    margin-bottom: 20rpx;
+    background: #fff;
+    border-radius: 3px;
+}
+.book-name {  
+    font-size: 15pt;
+    line-height: 135%;
+    word-break: break-all;
+}
+.book-date {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 25rpx;
+    font-size: 9pt;
+    color: #888;
+}
+.yhrq-value{
+    font-size: 13pt;
+}
+
+.book-img {
+    height: 13pt;
+    width: 13pt;
+    margin-top: 2pt;
+    margin-right: 10rpx;
+}

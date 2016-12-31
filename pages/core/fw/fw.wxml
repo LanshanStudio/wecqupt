@@ -1,0 +1,63 @@
+<view class="{{remind?'container':'container loaded' }}">
+     <view wx:if="{{remind}}" class="remind-box">
+        <image wx:if="{{remind == '加载中'}}" class="remind-img" src="/images/index/loading.gif"></image>
+        <block wx:else>
+          <image class="remind-img" src="/images/index/nothing.png"></image>
+          <text class="remind-text">{{remind}}</text>
+          <navigator open-type="redirect" wx:if="{{remind == '未完善志愿者信息'}}" url="/pages/more/append" class="remind-btn">前往完善</navigator>
+        </block>
+    </view>
+    <block wx:else>
+      <view class="fw">
+        <view class="fw-baseinf">
+          <text class="title">服务记录</text>
+          <view class="item">
+            <text class="item-title">姓名:</text>
+            <text>{{userName}}</text>
+          </view>
+          <view class="item">
+             <text class="item-title">性别:</text>
+            <text>{{userSex}}</text>
+          </view>
+          <view class="item">
+            <text class="item-title">时长:</text>
+            <text class="total-time">{{totalTime}}</text>
+          </view>
+          <image class="bg" src="../../../images/core/fw/fw-logo.png"></image>
+        </view>
+        <view class="fw-history">
+          <block wx:if="{{serverHistory.length>0}}">
+            <view wx:for="{{serverHistory}}" wx:key="{{index}}">
+              <view class="year">{{item.y+'年'}}</view>
+              <view wx:for="{{item.historys}}" wx:key="{{index}}" class="history-item">
+                  <view class="radio"></view>
+                <view class="content">
+                  <view class="date">{{item.date}}</view>
+                  <view class="content-item">
+                    <text class="title">服务内容:</text>
+                    <text>{{item.content}}</text>
+                  </view>
+                  <view class="content-item">
+                    <text class="title">服务地点:</text>
+                    <text>{{item.pos}}</text>
+                  </view>
+                  <view class="content-item">
+                    <text class="title">服务时长:</text>
+                    <text class="time">{{item.time }}</text>
+                  </view>
+                  <view class="hr"></view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <block wx:else>
+            <view  class="remind-box no-record">
+             <image class="remind-img" src="/images/index/nothing.png"></image>
+             <text class="remind-text">你还没有参加过志愿服务</text>
+             <text class="remind-text">请继续努力</text>
+            </view>
+          </block>  
+        </view>
+      </view>
+    </block>
+ </view>   

@@ -1,0 +1,51 @@
+<view class="container home">
+
+
+
+  <!-- 顶部导航栏  -->
+    <view class="navTab">
+      <view bindtap="changeModule" class="{{curselected? 'selected' : '' }}">成绩查询</view>
+      <view bindtap="changeModule" class="{{!curselected? 'selected' : '' }}">预约</view>
+    </view>
+    <!-- 成绩查询 预约  -->
+    <view>
+      <form bindsubmit="submitForm">
+       <view class="input-group {{name_focus ? 'active' : ''}}">
+            <text class="input-label">
+              <text class="left">姓</text>
+              <text class="right">名</text>
+            </text>
+            <input id="name" name="name" data-name="name" confirm-type ="next" type="text" cursor-spacing="30" placeholder="请输入姓名" bindinput="checkInput" bindfocus="inputFocus" bindblur="inputBlur" />
+        </view>
+        
+        <view class="warn">{{nameWarn}}</view>
+        <view class="input-group {{idCard_focus ? 'active' : ''}}">
+            <text class="input-label">准考证</text>
+            <input id="idCard" name="idCard" data-name="idCard" confirm-type ="done" type="number" cursor-spacing="30" placeholder="请输入准考证号" bindinput="checkInput" bindfocus="inputFocus" bindblur="inputBlur" />
+        </view>
+     
+         <view class="warn">{{idCardWarn}}</view>
+        <view class="inputWarp" wx:if="{{!curselected}}">
+            <view class="title" >
+              <i class="left">手</i>
+              <i class="right">机</i>
+            </view>
+            <input  name="tel" type="number" confirm-type ="done" bindinput="checkInput" data-name="tel"/>
+        </view>
+          <view class="warn">{{telWarn}}</view>
+         <view class="inputWarp" wx:if="{{!curselected}}">
+            <view class="title" >
+              <i class="left">邮</i>
+              <i class="right">箱</i>
+            </view>
+            <input placeholder="可选填" name="email" type="text" confirm-type ="done" bindinput="checkInput" data-name="email"/>
+        </view>
+         <view class="warn">{{emailWarn}}</view>
+        <button class="btn" formType="submit">
+          <view>{{curselected?'查询':'预约' }}</view>
+         </button>
+      </form>
+
+    </view>
+
+</view>

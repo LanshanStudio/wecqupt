@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor": "#e78ab0",
+  "navigationBarTitleText": "服务记录",
+  "backgroundColor": "#e78ab0",
+  "enablePullDownRefresh":false
+}

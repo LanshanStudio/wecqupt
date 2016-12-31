@@ -1,0 +1,50 @@
+/**append.wxss**/
+@import './login.wxss';
+.container{
+  height: auto;
+}
+.append-title {
+  position: absolute;
+  top: 30rpx;
+  width: 100%;
+  color: #777;
+  font-size: 22pt;
+  line-height: 200%;
+  text-align: center;
+}
+.confirm-btn{
+  margin-top: 0;
+}
+.append-form {
+  padding: 150rpx 0 30rpx;
+}
+.append-form .input-group {
+  padding: 20rpx 8rpx;
+  margin: 30rpx 3%;
+}
+.append-form .input-label {
+  font-size: 11pt;
+  height: 20rpx;
+  line-height: 20rpx;
+  padding: 0 20rpx;
+}
+.append-form .input-group input,
+.append-form .input-group picker {
+  font-size: 11pt;
+  padding: 0 20rpx;
+}
+
+.volunteer-help {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 10pt;
+  color: #bbb;
+  margin-right: 3%;
+  opacity: .8;
+}
+.volunteer-help-img {
+  width: 11pt;
+  height: 11pt;
+  margin: 0 5rpx;
+}

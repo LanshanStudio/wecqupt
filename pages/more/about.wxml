@@ -1,0 +1,236 @@
+<!--about.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="black-cover"></view>
+    <image class="logo" src="/images/more/logo.png"></image>
+    <image class="title" src="/images/more/title.png"></image>
+  </view>
+  <view class="content">
+    <view class="version">
+      <view class="version-title">
+        <text class="title-name">We重邮</text>
+        <text class="version-text">{{version}}</text>
+        <text class="version-text">公测</text>
+      </view>
+      <view bindtap="toggleLog">
+        <text class="version-log-link update-log" wx:if="{{!showLog}}">更新日志</text> 
+        <text class="version-log-link" wx:else>简介</text> 
+      </view>
+    </view>
+    <view class="describe" wx:if="{{!showLog}}">
+        <text class="desc-title">简介</text>
+        <view class="desc-list">
+          <text class="desc-list-item">官网：http://we.cqupt.edu.cn</text>
+          <text class="desc-list-item">Github：https://github.com/lanshan-studio/wecqupt</text>
+        </view>
+        <text class="desc-content">We重邮是一款微信小程序，由重庆邮电大学信息化办/信息中心指导，蓝山工作室（学生技术组织/团队）开发，有别于公众号的一种全新的连接用户与服务的方式，无需下载与安装即可在微信内被便捷地获取和传播，同时具有出色的使用体验。</text>
+        <text class="desc-content">We重邮是碎片化、一站式、一体化校园移动门户，适用于学生和教师，集课表、成绩、考试、空教室、学生查询、一卡通、借阅、学费、电费、报修、资讯等功能于一身。</text>
+        <text class="desc-content">We重邮有更好用的课表查询，本周视图、学期视图、对应日期及时钟轴，清晰明了。</text>
+        <text class="desc-content">We重邮有更方便的考试安排，帮你折算出考试周对应的日期，以及考试时间倒计时，一目了然。</text>
+        <text class="desc-content">We重邮有更强大的学生查询，搜人利器，通过模糊查询姓名、学号、班级就可以搜索到学生的学院、专业、课表等基本信息，适合于查同学课表以及寻找失主。</text>
+        <text class="desc-content">We重邮也是老师的点名神器，通过课表即可查询教学班学生名单，再也不用担心忘记带学生名单，点名方便快捷。</text>
+        <text class="desc-content">We重邮还是校园生活助手与管家，一卡通余额及消费、寝室电费，一览无余，让同学们更合理安排生活费，此外还有校园物业服务申报，随叫随到。</text>
+        <text class="desc-content">We重邮更是个百事通，校内头条、教务公告、OA公告、会议通知、学术讲座、综合新闻等，随时随地即能了解校园动态，还能预览与下载附件，掌上办公，指日可待。</text>
+        <text class="desc-content">We重邮更是/更有... （期待您的发现）</text>
+    </view>
+    <view class="log-list" wx:else>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.1.4 公测版</text>
+            <text class="desc-time">2017.08.02</text>
+          </view>
+          <text class="desc-content">修复BUG</text>
+          <view class="desc-list">
+            <text class="desc-list-item">修复假期不显示课表，改为显示下学期课表</text>
+            <text class="desc-list-item">修复课表鬼畜抖动特效</text>
+          </view>
+          <text class="desc-content">优化完善</text>
+          <view class="desc-list">
+            <text class="desc-list-item">优化空教室可以多选时间段查询</text>
+            <text class="desc-list-item">新增四六级查询功能</text>
+            <text class="desc-list-item">新增志愿者时长查询功能</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.1.3 公测版</text>
+            <text class="desc-time">2017.05.10</text>
+          </view>
+          <text class="desc-content">修复BUG</text>
+          <view class="desc-list">
+            <text class="desc-list-item">修复学期课表显示不整齐问题</text>
+            <text class="desc-list-item">修复4位寝室号无法查询电费的问题</text>
+            <text class="desc-list-item">修复成绩查询学期显示错误的问题</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.1.2 公测版</text>
+            <text class="desc-time">2017.01.10</text>
+          </view>
+          <text class="desc-content">修复BUG</text>
+          <view class="desc-list">
+            <text class="desc-list-item">修复ios无法显示电费查询截至日期的问题</text>
+            <text class="desc-list-item">修复4位寝室号无法完善信息的情况</text>
+            <text class="desc-list-item">修复部分借阅信息异常的问题</text>
+            <text class="desc-list-item">修复物业报修标题和内容一致的错误</text>
+            <text class="desc-list-item">修复首页卡片都无数据导致无法正常使用的问题</text>
+          </view>
+          <text class="desc-content">优化完善</text>
+          <view class="desc-list">
+            <text class="desc-list-item">新增反馈记录列表，能够即时查看反馈回复及动态</text>
+            <text class="desc-list-item">完善缓存机制，异常情况即时清除缓存</text>
+            <text class="desc-list-item">修改资讯类别导航颜色状态，避免灰色误导</text>
+            <text class="desc-list-item">涉及隐私不外泄的原因，禁止学生查询的分享</text>
+            <text class="desc-list-item">考试安排新增支持下拉刷新</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.1.1 公测版</text>
+            <text class="desc-time">2017.01.09</text>
+          </view>
+          <text class="desc-content">修复BUG</text>
+          <view class="desc-list">
+            <text class="desc-list-item">修复无网离线缓存模式情况下请求失败出现的错误</text>
+          </view>
+          <text class="desc-content">优化完善</text>
+          <view class="desc-list">
+            <text class="desc-list-item">阻止了课表详情的滑动穿透</text>
+            <text class="desc-list-item">兼容用户拒绝授权时的场景</text>
+            <text class="desc-list-item">完善物业报修响应时间的正确性</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.1.0 公测版</text>
+            <text class="desc-time">2017.01.09</text>
+          </view>
+          <text class="desc-content">新增离线缓存模式</text>
+          <view class="desc-list">
+            <text class="desc-list-item">支持无网离线缓存模式访问，指在无网且有缓存的状态下，可以离线使用部分功能</text>
+            <text class="desc-list-item">支持离线缓存模式的功能：首页、我的课表、成绩查询、考试安排、一卡通、借阅信息、学费信息、电费查询</text>
+            <text class="desc-list-item">不支持离线缓存模式的功能：空教室、学生查询、物业报修、资讯列表及详情、绑定及切换绑定、完善信息、反馈</text>
+          </view>
+          <text class="desc-content">优化完善</text>
+          <view class="desc-list">
+            <text class="desc-list-item">根据学生查询可以查询他人考试安排</text>
+            <text class="desc-list-item">现在可以分享考试安排页面了</text>
+            <text class="desc-list-item">打开分享单页时也将会进行自动登录</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.0.10 公测先行版</text>
+            <text class="desc-time">2016.12.29</text>
+          </view>
+          <text class="desc-content">随着小程序官方版本更新，进行以下改善</text>
+          <view class="desc-list">
+            <text class="desc-list-item">新增验证appid机制，开发者需要正确的appid才能进行开发调试</text>
+            <text class="desc-list-item">一卡通页面canvas部分api废除及新增，代码发生一些变动及优化</text>
+            <text class="desc-list-item">加载中的showToast消息提示框新增参数mask透明蒙层，防止触摸穿透</text>
+            <text class="desc-list-item">新增分享页面功能，可分享：首页(即整个小程序)、课表、学生查询、新闻详情（后续增加考试安排分享）</text>
+            <text class="desc-list-item">新增设置disableScroll禁止登录、完善信息页面上下滚动</text>
+            <text class="desc-list-item">所有navigator废弃redirect属性，改用新增的open-type</text>
+            <text class="desc-list-item">课表周期及详情的swiper滑块采用circular衔接滑动</text>
+            <text class="desc-list-item">新增部分input及textarea与键盘的距离cursor-spacing</text>
+            <text class="desc-list-item">利用新增picker的disabled禁止没有选择服务类型就选择服务项目</text>
+            <text class="desc-list-item">利用新增input事件bindconfirm实现学生查询点击键盘完成按钮搜索</text>
+            <text class="desc-list-item">所有textarea改用bindinput来获取输入内容</text>
+            <text class="desc-list-item">反馈用户信息中新增platform客户端平台</text>
+          </view>
+          <text class="desc-content">修复部分BUG</text>
+          <text class="desc-content">优化完善</text>
+          <view class="desc-list">
+            <text class="desc-list-item">表单验证提示优化</text>
+            <text class="desc-list-item">借阅信息界面优化</text>
+            <text class="desc-list-item">物业报修服务申报按钮再度优化</text>
+            <text class="desc-list-item">学生查询新增搜索帮助信息</text>
+            <text class="desc-list-item">强化缓存机制，根据版本号判断是否更新从而清除缓存</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.0.9 内测版</text>
+            <text class="desc-time">2016.12.17</text>
+          </view>
+          <text class="desc-content">修复BUG</text>
+          <text class="desc-content">优化完善</text>
+          <view class="desc-list">
+            <text class="desc-list-item">资讯设置权限，不同用户群体可访问不同类别，学生不再能访问会议通知</text>
+            <text class="desc-list-item">考试安排去掉了没有用处的教学班项</text>
+            <text class="desc-list-item">物业报修新增历史报修数，以及服务申报按钮优化</text>
+            <text class="desc-list-item">绑定、完善信息、关于新增"We重邮"字体图片</text>
+            <text class="desc-list-item">更多其他细节优化</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.0.8 内测版</text>
+            <text class="desc-time">2016.12.12</text>
+          </view>
+          <text class="desc-content">修复BUG</text>
+          <view class="desc-list">
+            <text class="desc-list-item">修复当用户为教师时的各项功能使用体验</text>
+            <text class="desc-list-item">修复课表详情课程名有两行时会被遮住一部分的问题</text>
+            <text class="desc-list-item">修复一卡通有时错位的问题</text>
+            <text class="desc-list-item">修复了无法报修及报修列表无法即时更新的问题</text>
+            <text class="desc-list-item">修复了学生查询的一些问题</text>
+          </view>
+          <text class="desc-content">优化完善</text>
+          <view class="desc-list">
+            <text class="desc-list-item">绑定及完善信息页面新增动画特效</text>
+            <text class="desc-list-item">优化课表等页面各动画，使其更快更流畅</text>
+            <text class="desc-list-item">一卡通新增横纵坐标提醒</text>
+            <text class="desc-list-item">一卡通新增两个折线图切换：消费金额和余额 视图</text>
+            <text class="desc-list-item">现可以通过左右滑动来切换同时有两次课时的课表详情</text>
+            <text class="desc-list-item">现可以通过左右滑动来切换资讯新闻类别</text>
+            <text class="desc-list-item">兼容性优化，优化了ios的细节差异</text>
+            <text class="desc-list-item">完善关于、反馈页面</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.0.7 内测版</text>
+            <text class="desc-time">2016.12.5</text>
+          </view>
+          <text class="desc-content">修复BUG</text>
+          <view class="desc-list">
+            <text class="desc-list-item">修复绑定过后没有自动刷新首页</text>
+            <text class="desc-list-item">修复空教室列表不能正常换行的问题</text>
+            <text class="desc-list-item">修复报修申请有时无法提交的问题</text>
+            <text class="desc-list-item">修复课表查询三节连上时的课次显示</text>
+            <text class="desc-list-item">修复课表查询第20周无日期的问题</text>
+            <text class="desc-list-item">修复电费查询描述不当的问题</text>
+          </view>
+          <text class="desc-content">优化完善</text>
+          <view class="desc-list">
+            <text class="desc-list-item">用户不用再需要完善身份证后6位信息</text>
+            <text class="desc-list-item">资讯类别筛选将一直固定在顶部</text>
+            <text class="desc-list-item">学生查询输入框新增清空按钮，改善搜索按钮样式</text>
+            <text class="desc-list-item">降低课表查询的黑色笼罩层透明度</text>
+            <text class="desc-list-item">寝室号禁止输入字母，并且需选择寝室楼栋才能提交</text>
+            <text class="desc-list-item">一些位置偏底的按钮离底部的距离得到了提升</text>
+            <text class="desc-list-item">点击历史借阅将会出现无法查询的提醒</text>
+            <text class="desc-list-item">某些位数固定的输入框，输入至指定位数后将自动收起键盘</text>
+            <text class="desc-list-item">去掉了登录帮助文字里的句号</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.0.6 内测版</text>
+            <text class="desc-time">2016.12.1</text>
+          </view>
+          <text class="desc-content">开启内测</text>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-lanshan">
+        <image src="/images/more/lanshan.png"></image>
+        <text>蓝山工作室</text>
+    </view>
+    <text>信息化办/信息中心 · 教育信息化办研发中心</text>
+    <text>Copyright @ {{year}} All Rights Reserved</text>
+  </view>
+</view>

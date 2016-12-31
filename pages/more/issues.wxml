@@ -1,0 +1,75 @@
+<!--issues.wxml-->
+<view class="container">
+  <view class="list-btn" bindtap="openList">
+    <image class="btn-icon" src="/images/more/issue.png"></image>
+    <text class="btn-text">我的反馈记录（{{list.count}}次）</text>
+    <view class="btn-open">
+      <image class="btn-open-img" src="/images/core/common/{{list.status ? 'up' : 'down'}}.png"></image>
+    </view>
+  </view>
+
+  <view class="issues-list" wx:if="{{list.status}}">
+    <block wx:if="{{list.count}}">
+      <view wx:for="{{list.data}}" wx:key="id" class="issues-item {{index == list.open ? '' : 'close'}}" data-index="{{index}}" bindtap="openItem">
+
+        <view class="item-hd">
+          <text class="btn-id">#{{item.issues}}</text>
+          <block wx:if="{{index == list.open}}">
+            <view class="item-labels">
+              <text wx:for="{{item.content.labels}}" wx:key="id" wx:for-item="label" class="item-label">{{label.name}}</text>
+            </view>
+            <text class="item-status" wx:if="{{item.content.state == 'closed'}}">已解决</text>
+            <text class="item-status" wx:elif="{{item.content.state == 'open'}}">进行中</text>
+          </block>
+        </view>
+
+        <text class="btn-text">{{item.title}}</text>
+        <view class="btn-open" wx:if="{{index != list.open}}">
+          <image class="btn-open-img" src="/images/core/common/down.png"></image>
+        </view>
+
+        <view class="item-bd" wx:else>
+          <text class="item-content">{{item_remind ? item_remind : item.content.body}}</text>
+          <view class="item-comment" wx:for="{{item.comments}}" wx:key="id" wx:for-item="comment">
+            <image class="item-comment-img" src="{{comment.user.avatar_url}}"></image>
+            <view class="item-comment-bd">
+              <text class="item-comment-name">{{comment.user.login}}</text>
+              <text>{{comment.body}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <text class="issues-remind">该反馈记录仅显示了反馈及回复的内容摘要，若要了解反馈详细，请访问 https://github.com/lanshan-studio/wecqupt/issues We重邮-Github。</text>
+    </block>
+    <text wx:else class="issues-remind text-center">{{list_remind}}</text>
+  </view>
+
+  <block wx:else>
+    <text class="issues-label">新建反馈</text>
+    <view class="issues-panel">
+      <view class="issues-input {{(showError&&!title)?'error':''}}">
+        <input placeholder="请输入反馈标题" bindinput="listenerTitle" />
+      </view>
+      <textarea class="issues-textarea {{(showError&&!content)?'error':''}}" cursor-spacing="50" placeholder="请输入反馈内容" bindinput="listenerTextarea"></textarea>
+    </view>
+
+    <block wx:if="{{upload}}">
+      <text class="issues-label">选择图片（可选）</text>
+      <view class="issues-img-panel {{(showError&&uploading)?'error':''}}">
+        <view class="issues-photo-item" wx:if="{{uploading}}">
+          <image class="remind-img" src="/images/index/loading.gif"></image>
+        </view>
+        <view class="issues-photo-item add-photo" wx:else bindtap="choosePhoto"></view>
+        <view class="issues-photo-item" wx:for="{{imgs}}" wx:key="*this">
+          <image src="{{item}}?imageView2/2/w/250/interlace/1/q/88" mode="aspectFill" data-index="{{index}}" bindtap="previewPhoto"></image>
+        </view>
+      </view>
+    </block>
+
+    <text class="issues-remind">您的反馈将会以Issues的形式提交至We重邮的Github，您可通过访问 https://github.com/lanshan-studio/wecqupt/issues 来了解反馈动态；此外，您还可以加入We重邮用户反馈QQ群487586022进行即时反馈。另注：频繁恶意反馈的用户将取消其反馈资格。</text>
+    <view class="submit-btn {{uploading?'disabled':''}}" bindtap="submit">
+      <text>提交反馈</text>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,101 @@
+/* fw.wxss */
+.container{
+    background-color: #f7f7f7;
+    padding-bottom: 0rpx;
+}
+.loaded{
+  background: #fff;
+}
+.remind-btn{
+  background: #e78ab0;
+  border-bottom:2px solid  #e78ab0; 
+}
+/* 基本信息  */
+.fw-baseinf{
+  padding: 32rpx 55rpx;
+  background-color: #f7f7f7;
+  position: relative;
+}
+.fw-baseinf .title{
+  color: #222;
+  font-size: 54rpx;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+.fw-baseinf .item{
+  margin-top: 18rpx;
+  color: #7f848a;
+  font-size: 30rpx;
+}
+.fw-baseinf .item-title{
+  margin-right: 20rpx;
+}
+.fw-baseinf .total-time{
+  color: #e78ab0;
+}
+.fw-baseinf .bg{
+  width: 200rpx;
+  height: 200rpx;
+  position: absolute;
+  left: 492rpx;
+  top: 43rpx;
+}
+/* 服务记录信息  */
+.fw-history{
+  padding: 0rpx 17rpx 45rpx;
+  background: #fff;
+}
+.fw-history .year{
+  color: #e78ab0;
+  font-size: 32rpx;
+  margin-bottom: 30rpx;
+  margin-top: 45rpx;
+}
+.history-item{
+  overflow: hidden;
+  position: relative;
+}
+.history-item  .radio{
+  background: #e78ab0;
+  border-radius: 50%;
+  width: 22rpx;
+  height: 22rpx;
+  position: absolute;
+  left: 7rpx;
+}
+
+.history-item .content{
+   padding-left: 56rpx;
+   border-left: 2rpx solid #e78ab0;
+   margin-left: 17rpx;
+   width: 630rpx;
+   overflow: hidden;
+}
+.history-item .content .date{
+  color: #000;
+  font-size: 26rpx;
+  margin-bottom: 15rpx;
+  margin-top: 3rpx;
+}
+.history-item .content .hr{
+  height: 2px;
+  background:#e9e9e9;
+  margin-top: 36rpx;
+  margin-bottom: 20rpx;
+}
+.content-item{
+  color: #7f848a;
+  font-size: 28rpx;
+  margin-top: 8rpx;
+}
+
+.content-item .time{
+  color: #e78ab0;
+}
+.content-item .title{
+  margin-right: 10rpx;
+}
+/* 没有记录  */
+.no-record{
+  margin-top: 100rpx;
+}

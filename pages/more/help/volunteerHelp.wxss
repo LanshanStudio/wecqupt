@@ -1,0 +1,20 @@
+/* volunteerHelp.wxss */
+.container{
+    background: #fff;
+    padding: 0 30rpx;
+}
+.title{
+    font-size: 18pt;
+    font-weight: bold;
+    margin-top: 40rpx;
+    line-height: 140%;
+    word-break: break-all;
+}
+.content{
+    font-size: 11pt;
+    line-height: 150%;
+    padding: 50rpx 15rpx 200rpx;
+}
+.text {
+  margin-top: 25rpx;
+}

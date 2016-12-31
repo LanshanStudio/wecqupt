@@ -1,0 +1,22 @@
+<!--volunteerHelp.wxml-->
+<view class="container">
+  <view wx:if="{{remind}}" class="remind-box">
+    <image wx:if="{{remind == '加载中'}}" class="remind-img" src="/images/index/loading.gif"></image>
+    <block wx:else>
+      <image class="remind-img" src="/images/index/nothing.png"></image>
+      <text class="remind-text">{{remind}}</text>
+    </block>
+  </view>
+  <block wx:else>
+    <view class="title">
+      <text>如何获取志愿者编号</text>
+    </view>
+    <view class="content">
+      <view>1.进入重庆志愿者服务网(zycq.cn)</view>
+      <image class="image" src="https://we.cqu.pt/api/upload/volunteer1.png" />
+      <view>2.登录后进入用户中心,点击选择基本信息</view>
+      <image class="image" src="https://we.cqu.pt/api/upload/volunteer2.png" />
+      <view>3.复制个人资料中的UID填写资料，一次绑定后便可以永远查看</view>
+    </view>
+  </block>
+</view>
