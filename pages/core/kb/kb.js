@@ -80,6 +80,7 @@ Page({
         endTop: 1254
       },
     ],
+    delayShow:true,
     timelineTop: 0,
     scroll: {
       left: 0
@@ -292,17 +293,24 @@ Page({
   //点击左右按钮切换swiper
   swiperChangeBtn: function(e) {
     var _this = this;
-    var dataset = e.currentTarget.dataset,
-      i, data = {};
-    if (_this.data[dataset.target] == 1 && dataset.direction == 'left') {
-      i = 0;
-    } else if (dataset.direction == 'left') {
-      i = -1;
-    } else if (dataset.direction == 'right') {
-      i = 1;
+    if (_this.data.delayShow){
+      _this.setData({ delayShow : false});
+      var dataset = e.currentTarget.dataset,
+        i, data = {};
+      if (_this.data[dataset.target] == 1 && dataset.direction == 'left') {
+        i = 0;
+      } else if (dataset.direction == 'left') {
+        i = -1;
+      } else if (dataset.direction == 'right') {
+        i = 1;
+      }
+      data[dataset.target] = parseInt(_this.data[dataset.target]) + i;
+      _this.setData(data, () => {
+        _this.setData({ delayShow: true });
+      });
+      
     }
-    data[dataset.target] = parseInt(_this.data[dataset.target]) + i;
-    _this.setData(data);
+
   },
   get_kb: function(share_id) {
     //数组去除指定值
